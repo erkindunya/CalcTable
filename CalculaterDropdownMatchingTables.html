@@ -1,0 +1,3264 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<div>
+    <style>
+        [class='hideLookupTable'] {
+            display: none;
+          }
+        </style>
+
+<!-- <span id="outputMind"></span> -->
+    <label class="description" for="BusinessUnit">Business Unit</label>
+    <select class="element select medium" id="BusinessUnit" name="BusinessUnit" >
+        <option value="" selected="selected"></option>
+        <option value="EnvironmentalServices">Environmental Services</option>
+        <option value="FacilitiesManagement">Facilities Management</option>
+        <option value="Highways">Highways</option>
+        <option value="HousingMaintenance">Housing Maintenance</option>
+        <option value="Living">Living</option>
+        <option value="MajorProjects">Major Projects</option>
+        <option value="RegionalBuilding">Regional Building</option>
+        <option value="Utilities">Utilities</option>
+    </select>
+</div>
+
+<div>
+    <label class="description" for="GeoLocation">Geographical Location</label>
+    <select class="element select medium" id="GeoLocation" name="GeoLocation">
+        <option value="" selected="selected"></option>
+        <option value="England">England</option>
+        <option value="Scotland">Scotland</option>
+        <option value="Wales">Wales</option>
+    </select>
+</div>
+<div>
+    <label class="description" for="projectValue">Project Value</label>
+    <select class="element select medium" id="projectValue" name="projectValue">
+        <option value="" selected="selected"></option>
+        <option value="< £1m">
+            < £1m</option> <option value="£ 1m">£ 1m
+        </option>
+        <option value="£ 1-5m">£ 1-5m</option>
+        <option value="£ 5-10m">£ 5-10m</option>
+        <option value="£ 10-15m">£ 10-15m</option>
+        <option value="£ 15-20m">£ 15-20m</option>
+        <option value="£ 20-25m">£ 20-25m</option>
+        <option value="£ 25-30m">£ 25-30m</option>
+        <option value="£ 30-40m">£ 30-40m</option>
+        <option value="£ 40-50m">£ 40-50m</option>
+        <option value="£ 50-60m">£ 50-60m</option>
+        <option value="£ 60-80m">£ 60-80m</option>
+        <option value="£ 80-100m">£ 80-100m</option>
+        <option value="£ 100-125m">£ 100-125m</option>
+        <option value="£ 125-150m">£ 125-150m</option>
+        <option value="£150m+">£150m+</option>
+    </select>
+</div>
+<div>
+<select id="t_dermal_name">
+    <option value="t_default_dermal">-- Choose --</option>
+     <option value="1" rel="5">Between Eyebrows</option>
+     <option value="7" rel="6">Individual Line Softening</option>
+     <option value="2" rel="7">Lip Contouring</option>
+</select>
+</div>
+<div>
+<select id="t_wrinkle_name">
+    <option value="t_default_wrinkle">-- Choose --</option>
+     <option value="1" rel="8">Between Eyebrows</option>
+     <option value="7" rel="9">Individual Line Softening</option>
+     <option value="2" rel="10">Lip Contouring</option>
+</select>
+
+
+<span id="output"></span>
+
+</div>
+
+<div>
+    <label class="description" for="ESPValue1">full time employment opportunity created</label>
+    <input id="ESPValue1" name="ESPValue1" class="element text medium" type="text" maxlength="255" />  
+    <!--  value="27165" rel="27165" -->
+</div>
+<div>
+    <label class="description" for="ESPValue2">part time employment opportunity created</label>
+    <input id="ESPValue2" name="ESPValue2" class="element text medium" type="text" maxlength="255" value="3241" rel="3241" />
+</div>
+<div>
+    <label class="description" for="ESPValue3">apprenticeship opportunity created</label>
+    <input id="ESPValue3" name="ESPValue3" class="element text medium" type="text" maxlength="255" value="27165" rel="27165" />
+</div>
+<div>
+    <label class="description" for="ESPValue4">apprenticeship weeks on site</label>
+    <input id="ESPValue4" name="ESPValue4" class="element text medium" type="text" maxlength="255" value="185.47" rel="185.47" />
+</div>
+<div>
+    <label class="description" for="ESPValue5">school pupils engaged no of pupils</label>
+    <input id="ESPValue5" name="ESPValue5" class="element text medium" type="text" maxlength="255" value="32" rel="32" />
+</div>
+<div>
+    <label class="description" for="ESPValue6">work experience under 19 number of weeks</label>
+    <input id="ESPValue6" name="ESPValue6" class="element text medium" type="text" maxlength="255" value="20.92" rel="20.92" />
+</div>
+<div>
+    <label class="description" for="ESPValue7">work experience over 19 number of weeks</label>
+    <input id="ESPValue7" name="ESPValue7" class="element text medium" type="text" maxlength="255" value="320" rel="320" />
+</div>
+<div>
+    <label class="description" for="ESPValue8">proffesional development training number of days</label>
+    <input id="ESPValue8" name="ESPValue8" class="element text medium" type="text" maxlength="255" value="50" rel="50" />
+</div>
+<div>
+    <label class="description" for="ESPValue9">health and safety training number of days</label>
+    <input id="ESPValue9" name="ESPValue9" class="element text medium" type="text" maxlength="255" value="100" rel="100" />
+</div>
+<div>
+    <label class="description" for="ESPValue10">kier ambassadors trained</label>
+    <input id="ESPValue10" name="ESPValue10" class="element text medium" type="text" maxlength="255" value="50" rel="50" />
+</div>
+<!-- RegionalBuilding England start -->
+<div class="">
+    <table id="RegionalBuilding">
+        <thead><strong>RegionalBuilding</strong></thead>
+        <tr>
+            <td><strong>RegionalBuilding</strong></td>
+            <td id="< £1m">< £1m</td> <td id="£ 1m">£ 1m</td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'><strong>1</strong></td>
+                <td projectValue='£ 5-10m'><strong>2</strong></td>
+                <td projectValue='£ 10-15m'><strong>3</strong></td>
+                <td projectValue='£ 15-20m'><strong>4</strong></td>
+                <td projectValue='£ 20-25m'><strong>5</strong></td>
+                <td projectValue='£ 25-30m'><strong>6</strong></td>
+                <td projectValue='£ 30-40m'><strong>7</strong></td>
+                <td projectValue='£ 40-50m'><strong>8</strong></td>
+                <td projectValue='£ 50-60m'><strong>9</strong></td>
+                <td projectValue='£ 60-80m'><strong>10</strong></td>
+                <td projectValue='£ 80-100m'><strong>11</strong></td>
+                <td projectValue='£ 100-125m'><strong>12</strong></td>
+                <td projectValue='£ 125-150m'><strong>13</strong></td>
+                <td projectValue='£150m+'><strong>14</strong></td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'><strong>0.1</strong></td>
+                <td projectValue='£ 1m'><strong>0.5</strong></td>
+                <td projectValue='£ 1-5m'><strong>1</strong></td>
+                <td projectValue='£ 5-10m'><strong>2</strong></td>
+                <td projectValue='£ 10-15m'><strong>4</strong></td>
+                <td projectValue='£ 15-20m'><strong>5</strong></td>
+                <td projectValue='£ 20-25m'><strong>6</strong></td>
+                <td projectValue='£ 25-30m'><strong>7</strong></td>
+                <td projectValue='£ 30-40m'><strong>8</strong></td>
+                <td projectValue='£ 40-50m'><strong>9</strong></td>
+                <td projectValue='£ 50-60m'><strong>10</strong></td>
+                <td projectValue='£ 60-80m'><strong>12</strong></td>
+                <td projectValue='£ 80-100m'><strong>14</strong></td>
+                <td projectValue='£ 100-125m'><strong>16</strong></td>
+                <td projectValue='£ 125-150m'><strong>18</strong></td>
+                <td projectValue='£150m+'><strong>20</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- RegionalBuilding England end-->
+
+<!-- RegionalBuilding Wales start-->
+
+<div class="">
+    <table id="RegionalBuildingWales">
+        <thead><strong>RegionalBuildingWales</strong></thead>
+        <tr>
+            <td><strong>RegionalBuildingWales</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'><strong>5</strong> </td>
+                <td projectValue='£ 10-15m'><strong>10</strong></td>
+                <td projectValue='£ 15-20m'><strong>15</strong></td>
+                <td projectValue='£ 20-25m'><strong>17.7</strong></td>
+                <td projectValue='£ 25-30m'><strong>21.5</strong></td>
+                <td projectValue='£ 30-40m'><strong>25.3</strong></td>
+                <td projectValue='£ 40-50m'><strong>29.1</strong></td>
+                <td projectValue='£ 50-60m'><strong>32.9</strong></td>
+                <td projectValue='£ 60-80m'><strong>36.7</strong></td>
+                <td projectValue='£ 80-100m'><strong>40.5</strong></td>
+                <td projectValue='£ 100-125m'><strong>44.3</strong></td>
+                <td projectValue='£ 125-150m'><strong>48.1</strong></td>
+                <td projectValue='£150m+'><strong>51.9</strong></td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'><strong>5</strong></td>
+                <td projectValue='£ 10-15m'><strong>10</strong></td>
+                <td projectValue='£ 15-20m'><strong>15</strong></td>
+                <td projectValue='£ 20-25m'><strong>20</strong></td>
+                <td projectValue='£ 25-30m'><strong>25</strong></td>
+                <td projectValue='£ 30-40m'><strong>27</strong></td>
+                <td projectValue='£ 40-50m'><strong>30</strong></td>
+                <td projectValue='£ 50-60m'><strong>33</strong></td>
+                <td projectValue='£ 60-80m'><strong>36</strong></td>
+                <td projectValue='£ 80-100m'><strong>40</strong></td>
+                <td projectValue='£ 100-125m'><strong>45</strong></td>
+                <td projectValue='£ 125-150m'><strong>50</strong></td>
+                <td projectValue='£150m+'><strong>55</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'>1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'><strong>15</strong></td>
+                <td projectValue='£ 10-15m'><strong>20</strong></td>
+                <td projectValue='£ 15-20m'><strong>25</strong></td>
+                <td projectValue='£ 20-25m'><strong>30</strong></td>
+                <td projectValue='£ 25-30m'><strong>35</strong></td>
+                <td projectValue='£ 30-40m'><strong>40</strong></td>
+                <td projectValue='£ 40-50m'><strong>45</strong></td>
+                <td projectValue='£ 50-60m'><strong>50</strong></td>
+                <td projectValue='£ 60-80m'><strong>55</strong></td>
+                <td projectValue='£ 80-100m'><strong>60</strong></td>
+                <td projectValue='£ 100-125m'><strong>65</strong></td>
+                <td projectValue='£ 125-150m'><strong>70</strong></td>
+                <td projectValue='£150m+'><strong>75</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- RegionalBuilding Wales End-->
+
+<!-- RegionalBuilding Scotland Start-->
+
+<div class="">
+    <table id="RegionalBuildingScotland">
+        <thead> <strong>RegionalBuildingScotland</strong></thead>
+        <tr>
+            <td><strong>RegionalBuildingScotland</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'><strong> 5 </strong> </td>
+                <td projectValue='£ 10-15m'>10</td>
+                <td projectValue='£ 15-20m'>15</td>
+                <td projectValue='£ 20-25m'>17.7</td>
+                <td projectValue='£ 25-30m'>21.5</td>
+                <td projectValue='£ 30-40m'>25.3</td>
+                <td projectValue='£ 40-50m'>29.1</td>
+                <td projectValue='£ 50-60m'>32.9</td>
+                <td projectValue='£ 60-80m'>36.7</td>
+                <td projectValue='£ 80-100m'>40.5</td>
+                <td projectValue='£ 100-125m'>44.3</td>
+                <td projectValue='£ 125-150m'>48.1</td>
+                <td projectValue='£150m+'>51.9</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>10</td>
+                <td projectValue='£ 15-20m'>15</td>
+                <td projectValue='£ 20-25m'>20</td>
+                <td projectValue='£ 25-30m'>25</td>
+                <td projectValue='£ 30-40m'>27</td>
+                <td projectValue='£ 40-50m'>30</td>
+                <td projectValue='£ 50-60m'>33</td>
+                <td projectValue='£ 60-80m'>36</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'>1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>15</td>
+                <td projectValue='£ 10-15m'>20</td>
+                <td projectValue='£ 15-20m'>25</td>
+                <td projectValue='£ 20-25m'>30</td>
+                <td projectValue='£ 25-30m'>35</td>
+                <td projectValue='£ 30-40m'>40</td>
+                <td projectValue='£ 40-50m'>45</td>
+                <td projectValue='£ 50-60m'>50</td>
+                <td projectValue='£ 60-80m'>55</td>
+                <td projectValue='£ 80-100m'>60</td>
+                <td projectValue='£ 100-125m'>65</td>
+                <td projectValue='£ 125-150m'>70</td>
+                <td projectValue='£150m+'>75</td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- RegionalBuilding Scotland Ends -->
+
+<!-- Housing Maint England start-->
+<div class="">
+    <table id="HousingMaintEngland">
+        <thead><strong>HousingMaintEngland</strong></thead>
+        <tr>
+            <td>HousingMaintEngland</td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'><strong> 5 </strong> </td>
+                <td projectValue='£ 10-15m'>10</td>
+                <td projectValue='£ 15-20m'>15</td>
+                <td projectValue='£ 20-25m'>17.7</td>
+                <td projectValue='£ 25-30m'>21.5</td>
+                <td projectValue='£ 30-40m'>25.3</td>
+                <td projectValue='£ 40-50m'>29.1</td>
+                <td projectValue='£ 50-60m'>32.9</td>
+                <td projectValue='£ 60-80m'>36.7</td>
+                <td projectValue='£ 80-100m'>40.5</td>
+                <td projectValue='£ 100-125m'>44.3</td>
+                <td projectValue='£ 125-150m'>48.1</td>
+                <td projectValue='£150m+'>51.9</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>10</td>
+                <td projectValue='£ 15-20m'>15</td>
+                <td projectValue='£ 20-25m'>20</td>
+                <td projectValue='£ 25-30m'>25</td>
+                <td projectValue='£ 30-40m'>27</td>
+                <td projectValue='£ 40-50m'>30</td>
+                <td projectValue='£ 50-60m'>33</td>
+                <td projectValue='£ 60-80m'>36</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'>1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>15</td>
+                <td projectValue='£ 10-15m'>20</td>
+                <td projectValue='£ 15-20m'>25</td>
+                <td projectValue='£ 20-25m'>30</td>
+                <td projectValue='£ 25-30m'>35</td>
+                <td projectValue='£ 30-40m'>40</td>
+                <td projectValue='£ 40-50m'>45</td>
+                <td projectValue='£ 50-60m'>50</td>
+                <td projectValue='£ 60-80m'>55</td>
+                <td projectValue='£ 80-100m'>60</td>
+                <td projectValue='£ 100-125m'>65</td>
+                <td projectValue='£ 125-150m'>70</td>
+                <td projectValue='£150m+'>75</td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Housing Maint England End-->
+
+<!-- Housing Maint Wales start-->
+<div class="">
+    <table id="HousingMaintWales">
+        <thead><strong>HousingMaintWales</strong></thead>
+        <tr>
+            <td><strong>HousingMaintWales</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'><strong> 5 </strong> </td>
+                <td projectValue='£ 10-15m'>10</td>
+                <td projectValue='£ 15-20m'>15</td>
+                <td projectValue='£ 20-25m'>17.7</td>
+                <td projectValue='£ 25-30m'>21.5</td>
+                <td projectValue='£ 30-40m'>25.3</td>
+                <td projectValue='£ 40-50m'>29.1</td>
+                <td projectValue='£ 50-60m'>32.9</td>
+                <td projectValue='£ 60-80m'>36.7</td>
+                <td projectValue='£ 80-100m'>40.5</td>
+                <td projectValue='£ 100-125m'>44.3</td>
+                <td projectValue='£ 125-150m'>48.1</td>
+                <td projectValue='£150m+'>51.9</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>10</td>
+                <td projectValue='£ 15-20m'>15</td>
+                <td projectValue='£ 20-25m'>20</td>
+                <td projectValue='£ 25-30m'>25</td>
+                <td projectValue='£ 30-40m'>27</td>
+                <td projectValue='£ 40-50m'>30</td>
+                <td projectValue='£ 50-60m'>33</td>
+                <td projectValue='£ 60-80m'>36</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'>1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>15</td>
+                <td projectValue='£ 10-15m'>20</td>
+                <td projectValue='£ 15-20m'>25</td>
+                <td projectValue='£ 20-25m'>30</td>
+                <td projectValue='£ 25-30m'>35</td>
+                <td projectValue='£ 30-40m'>40</td>
+                <td projectValue='£ 40-50m'>45</td>
+                <td projectValue='£ 50-60m'>50</td>
+                <td projectValue='£ 60-80m'>55</td>
+                <td projectValue='£ 80-100m'>60</td>
+                <td projectValue='£ 100-125m'>65</td>
+                <td projectValue='£ 125-150m'>70</td>
+                <td projectValue='£150m+'>75</td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Housing Maint Wales End-->
+
+<!-- Major Projects start-->
+<div class="">
+    <table id="MajorProjects">
+        <thead><strong>MajorProjects</strong></thead>
+        <tr>
+            <td><strong>MajorProjects</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>3</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>5</td>
+                <td projectValue='£ 25-30m'>6</td>
+                <td projectValue='£ 30-40m'>7</td>
+                <td projectValue='£ 40-50m'>8</td>
+                <td projectValue='£ 50-60m'>9</td>
+                <td projectValue='£ 60-80m'>10</td>
+                <td projectValue='£ 80-100m'>11</td>
+                <td projectValue='£ 100-125m'>12</td>
+                <td projectValue='£ 125-150m'>13</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'><strong>0.1</strong></td>
+                <td projectValue='£ 1m'><strong>0.5</strong></td>
+                <td projectValue='£ 1-5m'><strong>1</strong></td>
+                <td projectValue='£ 5-10m'><strong>2</strong></td>
+                <td projectValue='£ 10-15m'><strong>4</strong></td>
+                <td projectValue='£ 15-20m'><strong>5</strong></td>
+                <td projectValue='£ 20-25m'><strong>6</strong></td>
+                <td projectValue='£ 25-30m'><strong>7</strong></td>
+                <td projectValue='£ 30-40m'><strong>8</strong></td>
+                <td projectValue='£ 40-50m'><strong>9</strong></td>
+                <td projectValue='£ 50-60m'><strong>10</strong></td>
+                <td projectValue='£ 60-80m'><strong>12</strong></td>
+                <td projectValue='£ 80-100m'><strong>14</strong></td>
+                <td projectValue='£ 100-125m'><strong>16</strong></td>
+                <td projectValue='£ 125-150m'><strong>18</strong></td>
+                <td projectValue='£150m+'><strong>20</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Major projects end -->
+
+<!-- Living start  -->
+
+<div class="">
+    <table id="Living">
+        <thead><strong>Living</strong></thead>
+        <tr>
+            <td><strong>Living</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>3</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>5</td>
+                <td projectValue='£ 25-30m'>6</td>
+                <td projectValue='£ 30-40m'>7</td>
+                <td projectValue='£ 40-50m'>8</td>
+                <td projectValue='£ 50-60m'>9</td>
+                <td projectValue='£ 60-80m'>10</td>
+                <td projectValue='£ 80-100m'>11</td>
+                <td projectValue='£ 100-125m'>12</td>
+                <td projectValue='£ 125-150m'>13</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'><strong>0.1</strong></td>
+                <td projectValue='£ 1m'><strong>0.5</strong></td>
+                <td projectValue='£ 1-5m'><strong>1</strong></td>
+                <td projectValue='£ 5-10m'><strong>2</strong></td>
+                <td projectValue='£ 10-15m'><strong>4</strong></td>
+                <td projectValue='£ 15-20m'><strong>5</strong></td>
+                <td projectValue='£ 20-25m'><strong>6</strong></td>
+                <td projectValue='£ 25-30m'><strong>7</strong></td>
+                <td projectValue='£ 30-40m'><strong>8</strong></td>
+                <td projectValue='£ 40-50m'><strong>9</strong></td>
+                <td projectValue='£ 50-60m'><strong>10</strong></td>
+                <td projectValue='£ 60-80m'><strong>12</strong></td>
+                <td projectValue='£ 80-100m'><strong>14</strong></td>
+                <td projectValue='£ 100-125m'><strong>16</strong></td>
+                <td projectValue='£ 125-150m'><strong>18</strong></td>
+                <td projectValue='£150m+'><strong>20</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Living End -->
+
+
+<!-- Highways start -->
+
+<div class="">
+    <table id="Highways">
+        <thead><strong>Highways</strong></thead>
+        <tr>
+            <td><strong>Highways</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>3</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>5</td>
+                <td projectValue='£ 25-30m'>6</td>
+                <td projectValue='£ 30-40m'>7</td>
+                <td projectValue='£ 40-50m'>8</td>
+                <td projectValue='£ 50-60m'>9</td>
+                <td projectValue='£ 60-80m'>10</td>
+                <td projectValue='£ 80-100m'>11</td>
+                <td projectValue='£ 100-125m'>12</td>
+                <td projectValue='£ 125-150m'>13</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'><strong> 1 </strong></td>
+                <td projectValue='£ 5-10m'><strong> 1</strong></td>
+                <td projectValue='£ 10-15m'><strong> 2</strong></td>
+                <td projectValue='£ 15-20m'><strong> 2</strong></td>
+                <td projectValue='£ 20-25m'><strong> 4</strong></td>
+                <td projectValue='£ 25-30m'><strong> 4</strong></td>
+                <td projectValue='£ 30-40m'><strong> 6</strong></td>
+                <td projectValue='£ 40-50m'><strong> 6</strong></td>
+                <td projectValue='£ 50-60m'><strong> 8</strong></td>
+                <td projectValue='£ 60-80m'><strong> 10</strong></td>
+                <td projectValue='£ 80-100m'><strong> 12</strong></td>
+                <td projectValue='£ 100-125m'><strong> 14</strong></td>
+                <td projectValue='£ 125-150m'><strong> 16</strong></td>
+                <td projectValue='£150m+'><strong> 18</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Highways  End -->
+
+<!-- Utilities start  -->
+<div class="">
+    <table id="Utilities">
+        <thead><strong>Utilities</strong></thead>
+        <tr>
+            <td><strong>Utilities</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>3</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>5</td>
+                <td projectValue='£ 25-30m'>6</td>
+                <td projectValue='£ 30-40m'>7</td>
+                <td projectValue='£ 40-50m'>8</td>
+                <td projectValue='£ 50-60m'>9</td>
+                <td projectValue='£ 60-80m'>10</td>
+                <td projectValue='£ 80-100m'>11</td>
+                <td projectValue='£ 100-125m'>12</td>
+                <td projectValue='£ 125-150m'>13</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'><strong> 1 </strong></td>
+                <td projectValue='£ 5-10m'><strong> 1</strong></td>
+                <td projectValue='£ 10-15m'><strong> 2</strong></td>
+                <td projectValue='£ 15-20m'><strong> 2</strong></td>
+                <td projectValue='£ 20-25m'><strong> 4</strong></td>
+                <td projectValue='£ 25-30m'><strong> 4</strong></td>
+                <td projectValue='£ 30-40m'><strong> 6</strong></td>
+                <td projectValue='£ 40-50m'><strong> 6</strong></td>
+                <td projectValue='£ 50-60m'><strong> 8</strong></td>
+                <td projectValue='£ 60-80m'><strong> 10</strong></td>
+                <td projectValue='£ 80-100m'><strong> 12</strong></td>
+                <td projectValue='£ 100-125m'><strong> 14</strong></td>
+                <td projectValue='£ 125-150m'><strong> 16</strong></td>
+                <td projectValue='£150m+'><strong> 18</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Utilities end -->
+
+
+
+<!-- Enviromental Services  start-->
+<div class="">
+    <table id="EnvironmentalServices">
+        <thead><strong>EnvironmentalServices</strong></thead>
+        <tr>
+            <td><strong>EnvironmentalServices</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>3</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>5</td>
+                <td projectValue='£ 25-30m'>6</td>
+                <td projectValue='£ 30-40m'>7</td>
+                <td projectValue='£ 40-50m'>8</td>
+                <td projectValue='£ 50-60m'>9</td>
+                <td projectValue='£ 60-80m'>10</td>
+                <td projectValue='£ 80-100m'>11</td>
+                <td projectValue='£ 100-125m'>12</td>
+                <td projectValue='£ 125-150m'>13</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'><strong> 1 </strong></td>
+                <td projectValue='£ 5-10m'><strong> 1</strong></td>
+                <td projectValue='£ 10-15m'><strong> 2</strong></td>
+                <td projectValue='£ 15-20m'><strong> 2</strong></td>
+                <td projectValue='£ 20-25m'><strong> 4</strong></td>
+                <td projectValue='£ 25-30m'><strong> 4</strong></td>
+                <td projectValue='£ 30-40m'><strong> 6</strong></td>
+                <td projectValue='£ 40-50m'><strong> 6</strong></td>
+                <td projectValue='£ 50-60m'><strong> 8</strong></td>
+                <td projectValue='£ 60-80m'><strong> 10</strong></td>
+                <td projectValue='£ 80-100m'><strong> 12</strong></td>
+                <td projectValue='£ 100-125m'><strong> 14</strong></td>
+                <td projectValue='£ 125-150m'><strong> 16</strong></td>
+                <td projectValue='£150m+'><strong> 18</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Enviromental Services  end  -->
+
+
+
+
+
+<!--  facilities management start-->
+
+<div class="">
+    <table id="FacilitiesManagement">
+        <thead><strong>FacilitiesManagement</strong></thead>
+        <tr>
+            <td><strong>FacilitiesManagement</strong></td>
+            <td id="< £1m">
+                < £1m</td> <td id="£ 1m">£ 1m
+            </td>
+            <td id="£ 1-5m">£ 1-5m</td>
+            <td id="£ 5-10m">£ 5-10m</td>
+            <td id="£ 10-15m">£ 10-15m</td>
+            <td id="£ 15-20m">£ 15-20m</td>
+            <td id="£ 20-25m">£ 20-25m</td>
+            <td id="£ 25-30m">£ 25-30m</td>
+            <td id="£ 30-40m">£ 30-40m</td>
+            <td id="£ 40-50m">£ 40-50m</td>
+            <td id="£ 50-60m">£ 50-60m</td>
+            <td id="£ 60-80m">£ 60-80m</td>
+            <td id="£ 80-100m">£ 80-100m</td>
+            <td id="£ 100-125m">£ 100-125m</td>
+            <td id="£ 125-150m">£ 125-150m</td>
+            <td id="£150m+">£150m+</td>
+        </tr>
+        <tbody>
+            <tr product='ESPValue1'>
+                <td>ESPValue1</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>3</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>5</td>
+                <td projectValue='£ 25-30m'>6</td>
+                <td projectValue='£ 30-40m'>7</td>
+                <td projectValue='£ 40-50m'>8</td>
+                <td projectValue='£ 50-60m'>9</td>
+                <td projectValue='£ 60-80m'>10</td>
+                <td projectValue='£ 80-100m'>11</td>
+                <td projectValue='£ 100-125m'>12</td>
+                <td projectValue='£ 125-150m'>13</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue2'>
+                <td>ESPValue2</td>
+                <td projectValue='< £1m'>0</td>
+                <td projectValue='£ 1m'>0</td>
+                <td projectValue='£ 1-5m'>0</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1.5</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2.5</td>
+                <td projectValue='£ 30-40m'>3</td>
+                <td projectValue='£ 40-50m'>3.5</td>
+                <td projectValue='£ 50-60m'>4</td>
+                <td projectValue='£ 60-80m'>4.5</td>
+                <td projectValue='£ 80-100m'>5</td>
+                <td projectValue='£ 100-125m'>5.5</td>
+                <td projectValue='£ 125-150m'>6</td>
+                <td projectValue='£150m+'>7</td>
+            </tr>
+            <tr product='ESPValue3'>
+                <td>ESPValue3</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'><strong> 1 </strong></td>
+                <td projectValue='£ 5-10m'><strong> 1</strong></td>
+                <td projectValue='£ 10-15m'><strong> 2</strong></td>
+                <td projectValue='£ 15-20m'><strong> 2</strong></td>
+                <td projectValue='£ 20-25m'><strong> 4</strong></td>
+                <td projectValue='£ 25-30m'><strong> 4</strong></td>
+                <td projectValue='£ 30-40m'><strong> 6</strong></td>
+                <td projectValue='£ 40-50m'><strong> 6</strong></td>
+                <td projectValue='£ 50-60m'><strong> 8</strong></td>
+                <td projectValue='£ 60-80m'><strong> 10</strong></td>
+                <td projectValue='£ 80-100m'><strong> 12</strong></td>
+                <td projectValue='£ 100-125m'><strong> 14</strong></td>
+                <td projectValue='£ 125-150m'><strong> 16</strong></td>
+                <td projectValue='£150m+'><strong> 18</strong></td>
+            </tr>
+            <tr product='ESPValue4'>
+                <td>ESPValue4</td>
+                <td projectValue='< £1m'><strong>1</strong></td>
+                <td projectValue='£ 1m'><strong>5</strong></td>
+                <td projectValue='£ 1-5m'><strong>10</strong></td>
+                <td projectValue='£ 5-10m'><strong>10</strong></td>
+                <td projectValue='£ 10-15m'><strong>15</strong></td>
+                <td projectValue='£ 15-20m'><strong>20</strong></td>
+                <td projectValue='£ 20-25m'><strong>25</strong></td>
+                <td projectValue='£ 25-30m'><strong>30</strong></td>
+                <td projectValue='£ 30-40m'><strong>35</strong></td>
+                <td projectValue='£ 40-50m'><strong>40</strong></td>
+                <td projectValue='£ 50-60m'><strong>45</strong></td>
+                <td projectValue='£ 60-80m'><strong>50</strong></td>
+                <td projectValue='£ 80-100m'><strong>55</strong></td>
+                <td projectValue='£ 100-125m'><strong>60</strong></td>
+                <td projectValue='£ 125-150m'><strong>65</strong></td>
+                <td projectValue='£150m+'><strong>70</strong></td>
+            </tr>
+            <tr product='ESPValue5'>
+                <td>ESPValue5</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>5</td>
+                <td projectValue='£ 1-5m'>10</td>
+                <td projectValue='£ 5-10m'>20</td>
+                <td projectValue='£ 10-15m'>50</td>
+                <td projectValue='£ 15-20m'>75</td>
+                <td projectValue='£ 20-25m'>100</td>
+                <td projectValue='£ 25-30m'>125</td>
+                <td projectValue='£ 30-40m'>150</td>
+                <td projectValue='£ 40-50m'>175</td>
+                <td projectValue='£ 50-60m'>200</td>
+                <td projectValue='£ 60-80m'>225</td>
+                <td projectValue='£ 80-100m'>250</td>
+                <td projectValue='£ 100-125m'>275</td>
+                <td projectValue='£ 125-150m'>300</td>
+                <td projectValue='£150m+'>350</td>
+            </tr>
+            <tr product='ESPValue6'>
+                <td>ESPValue6</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>2</td>
+                <td projectValue='£ 10-15m'>2</td>
+                <td projectValue='£ 15-20m'>4</td>
+                <td projectValue='£ 20-25m'>4</td>
+                <td projectValue='£ 25-30m'>4</td>
+                <td projectValue='£ 30-40m'>6</td>
+                <td projectValue='£ 40-50m'>6</td>
+                <td projectValue='£ 50-60m'>6</td>
+                <td projectValue='£ 60-80m'>8</td>
+                <td projectValue='£ 80-100m'>8</td>
+                <td projectValue='£ 100-125m'>10</td>
+                <td projectValue='£ 125-150m'>12</td>
+                <td projectValue='£150m+'>14</td>
+            </tr>
+            <tr product='ESPValue7'>
+                <td>ESPValue7</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.5</td>
+                <td projectValue='£ 1-5m'>1</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>6</td>
+                <td projectValue='£ 15-20m'>8</td>
+                <td projectValue='£ 20-25m'>10</td>
+                <td projectValue='£ 25-30m'>12</td>
+                <td projectValue='£ 30-40m'>14</td>
+                <td projectValue='£ 40-50m'>16</td>
+                <td projectValue='£ 50-60m'>18</td>
+                <td projectValue='£ 60-80m'>20</td>
+                <td projectValue='£ 80-100m'>24</td>
+                <td projectValue='£ 100-125m'>28</td>
+                <td projectValue='£ 125-150m'>30</td>
+                <td projectValue='£150m+'>36</td>
+            </tr>
+            <tr product='ESPValue8'>
+                <td>ESPValue8</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>4</td>
+                <td projectValue='£ 10-15m'>5.5</td>
+                <td projectValue='£ 15-20m'>7</td>
+                <td projectValue='£ 20-25m'>8.5</td>
+                <td projectValue='£ 25-30m'>10</td>
+                <td projectValue='£ 30-40m'>11.5</td>
+                <td projectValue='£ 40-50m'>13</td>
+                <td projectValue='£ 50-60m'>14.5</td>
+                <td projectValue='£ 60-80m'>16</td>
+                <td projectValue='£ 80-100m'>17.5</td>
+                <td projectValue='£ 100-125m'>19</td>
+                <td projectValue='£ 125-150m'>20.5</td>
+                <td projectValue='£150m+'>22</td>
+            </tr>
+            <tr product='ESPValue9'>
+                <td>ESPValue9</td>
+                <td projectValue='< £1m'>0.5</td>
+                <td projectValue='£ 1m'>1</td>
+                <td projectValue='£ 1-5m'>2.5</td>
+                <td projectValue='£ 5-10m'>5</td>
+                <td projectValue='£ 10-15m'>8</td>
+                <td projectValue='£ 15-20m'>10</td>
+                <td projectValue='£ 20-25m'>15</td>
+                <td projectValue='£ 25-30m'>20</td>
+                <td projectValue='£ 30-40m'>25</td>
+                <td projectValue='£ 40-50m'>28</td>
+                <td projectValue='£ 50-60m'>31</td>
+                <td projectValue='£ 60-80m'>35</td>
+                <td projectValue='£ 80-100m'>40</td>
+                <td projectValue='£ 100-125m'>45</td>
+                <td projectValue='£ 125-150m'>50</td>
+                <td projectValue='£150m+'>55</td>
+            </tr>
+            <tr product='ESPValue10'>
+                <td>ESPValue10</td>
+                <td projectValue='< £1m'>0.1</td>
+                <td projectValue='£ 1m'>0.25</td>
+                <td projectValue='£ 1-5m'>0.5</td>
+                <td projectValue='£ 5-10m'>0.5</td>
+                <td projectValue='£ 10-15m'>1</td>
+                <td projectValue='£ 15-20m'>1</td>
+                <td projectValue='£ 20-25m'>2</td>
+                <td projectValue='£ 25-30m'>2</td>
+                <td projectValue='£ 30-40m'>2</td>
+                <td projectValue='£ 40-50m'>2</td>
+                <td projectValue='£ 50-60m'>2.5</td>
+                <td projectValue='£ 60-80m'>2.5</td>
+                <td projectValue='£ 80-100m'>3</td>
+                <td projectValue='£ 100-125m'>3</td>
+                <td projectValue='£ 125-150m'>3</td>
+                <td projectValue='£150m+'>3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--  facilities management end -->
+
+
+<!--  multiplierSemtricaValues start-->
+<div class="">
+    <table id="multiplierSemtricaValues">
+        <thead><strong>multiplierSemtricaValues</strong></thead>
+        <tr>
+            <td><strong>multiplierSemtricaValues</strong></td>
+            <td id="">Value to apply</td> 
+        </tr>
+        <tbody>
+            <tr Semtrica='ESPValue1'>
+                <td>ESPValue1</td>
+                <td valueToCalc='ESPValue1'>27165</td>
+            </tr>
+            <tr Semtrica='ESPValue2'>
+                <td>ESPValue2</td>
+                <td valueToCalc='ESPValue2'>3241</td>
+            </tr>
+            <tr Semtrica='ESPValue3'>
+                <td>ESPValue3</td>
+                <td valueToCalc='ESPValue3'>27165</td>
+            </tr>
+            <tr Semtrica='ESPValue4'>
+                <td>ESPValue4</td>
+                <td valueToCalc='ESPValue4'><strong>185.47</strong></td>
+            </tr>
+            <tr Semtrica='ESPValue5'>
+                <td>ESPValue5</td>
+                <td valueToCalc='ESPValue5'>32</td>
+            </tr>
+            <tr Semtrica='ESPValue6'>
+                <td>ESPValue6</td>
+                <td valueToCalc='ESPValue6'>20.92</td>
+            </tr>
+            <tr Semtrica='ESPValue7'>
+                <td>ESPValue7</td>
+                <td valueToCalc='ESPValue7'>32</td>
+            </tr>
+            <tr Semtrica='ESPValue8'>
+                <td>ESPValue8</td>
+                <td valueToCalc='ESPValue8'>50</td>
+            </tr>
+            <tr Semtrica='ESPValue9'>
+                <td>ESPValue9</td>
+                <td valueToCalc='ESPValue9'>100</td>
+            </tr>
+            <tr Semtrica='ESPValue10'>
+                <td>ESPValue10</td>
+                <td valueToCalc='ESPValue10'>50</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/main.js"></script>
+<!-- multiplierSemtricaValues   END-->
+
+
+<!-- <table id="Scotland">
+    <thead>Scotland</thead>
+    <tr>
+        <td>Scotland</td>
+        <td id="< £1m">
+            < £1m</td> <td id="£ 1m">£ 1m
+        </td>
+        <td id="£ 1-5m">£ 1-5m</td>
+        <td id="£ 5-10m">£ 5-10m</td>
+        <td id="£ 10-15m">£ 10-15m</td>
+        <td id="£ 15-20m">£ 15-20m</td>
+        <td id="£ 20-25m">£ 20-25m</td>
+        <td id="£ 25-30m">£ 25-30m</td>
+        <td id="£ 30-40m">£ 30-40m</td>
+        <td id="£ 40-50m">£ 40-50m</td>
+        <td id="£ 50-60m">£ 50-60m</td>
+        <td id="£ 60-80m">£ 60-80m</td>
+        <td id="£ 80-100m">£ 80-100m</td>
+        <td id="£ 100-125m">£ 100-125m</td>
+        <td id="£ 125-150m">£ 125-150m</td>
+        <td id="£150m+">£150m+</td>
+    </tr>
+    <tbody>
+        <tr product='ESPValue1'>
+            <td>ESPValue1</td>
+            <td projectValue='< £1m'>10</td>
+            <td projectValue='£ 1m'>10</td>
+            <td projectValue='£ 1-5m'>10</td>
+            <td projectValue='£ 5-10m'>20</td>
+            <td projectValue='£ 10-15m'>30</td>
+            <td projectValue='£ 15-20m'>40</td>
+            <td projectValue='£ 20-25m'>50</td>
+            <td projectValue='£ 25-30m'>60</td>
+            <td projectValue='£ 30-40m'>70</td>
+            <td projectValue='£ 40-50m'>80</td>
+            <td projectValue='£ 50-60m'>90</td>
+            <td projectValue='£ 60-80m'>100</td>
+            <td projectValue='£ 80-100m'>110</td>
+            <td projectValue='£ 100-125m'>120</td>
+            <td projectValue='£ 125-150m'>130</td>
+            <td projectValue='£150m+'>140</td>
+        </tr>
+        <tr product='ESPValue2'>
+            <td>ESPValue2</td>
+            <td projectValue='< £1m'>10</td>
+            <td projectValue='£ 1m'>10</td>
+            <td projectValue='£ 1-5m'>10</td>
+            <td projectValue='£ 5-10m'>20</td>
+            <td projectValue='£ 10-15m'>30</td>
+            <td projectValue='£ 15-20m'>40</td>
+            <td projectValue='£ 20-25m'>50</td>
+            <td projectValue='£ 25-30m'>60</td>
+            <td projectValue='£ 30-40m'>70</td>
+            <td projectValue='£ 40-50m'>80</td>
+            <td projectValue='£ 50-60m'>90</td>
+            <td projectValue='£ 60-80m'>100</td>
+            <td projectValue='£ 80-100m'>110</td>
+            <td projectValue='£ 100-125m'>120</td>
+            <td projectValue='£ 125-150m'>130</td>
+            <td projectValue='£150m+'>140</td>
+        </tr>
+        <tr product='ESPValue3'>
+            <td>ESPValue3</td>
+            <td projectValue='< £1m'>1</td>
+            <td projectValue='£ 1m'>5</td>
+            <td projectValue='£ 1-5m'>1</td>
+            <td projectValue='£ 5-10m'>5</td>
+            <td projectValue='£ 10-15m'>10</td>
+            <td projectValue='£ 15-20m'>15</td>
+            <td projectValue='£ 20-25m'>20</td>
+            <td projectValue='£ 25-30m'>25</td>
+            <td projectValue='£ 30-40m'>27</td>
+            <td projectValue='£ 40-50m'>30</td>
+            <td projectValue='£ 50-60m'>33</td>
+            <td projectValue='£ 60-80m'>36</td>
+            <td projectValue='£ 80-100m'>40</td>
+            <td projectValue='£ 100-125m'>45</td>
+            <td projectValue='£ 125-150m'>50</td>
+            <td projectValue='£150m+'>55</td>
+        </tr>
+        <tr product='ESPValue4'>
+            <td>ESPValue4</td>
+            <td projectValue='< £1m'>1</td>
+            <td projectValue='£ 1m'>5</td>
+            <td projectValue='£ 1-5m'>10</td>
+            <td projectValue='£ 5-10m'>15</td>
+            <td projectValue='£ 10-15m'>20</td>
+            <td projectValue='£ 15-20m'>25</td>
+            <td projectValue='£ 20-25m'>30</td>
+            <td projectValue='£ 25-30m'>35</td>
+            <td projectValue='£ 30-40m'>40</td>
+            <td projectValue='£ 40-50m'>45</td>
+            <td projectValue='£ 50-60m'>50</td>
+            <td projectValue='£ 60-80m'>55</td>
+            <td projectValue='£ 80-100m'>60</td>
+            <td projectValue='£ 100-125m'>65</td>
+            <td projectValue='£ 125-150m'>70</td>
+            <td projectValue='£150m+'>75</td>
+        </tr>
+        <tr product='ESPValue5'>
+            <td>ESPValue5</td>
+            <td projectValue='< £1m'>0.1</td>
+            <td projectValue='£ 1m'>5</td>
+            <td projectValue='£ 1-5m'>10</td>
+            <td projectValue='£ 5-10m'>20</td>
+            <td projectValue='£ 10-15m'>50</td>
+            <td projectValue='£ 15-20m'>75</td>
+            <td projectValue='£ 20-25m'>100</td>
+            <td projectValue='£ 25-30m'>125</td>
+            <td projectValue='£ 30-40m'>150</td>
+            <td projectValue='£ 40-50m'>175</td>
+            <td projectValue='£ 50-60m'>200</td>
+            <td projectValue='£ 60-80m'>225</td>
+            <td projectValue='£ 80-100m'>250</td>
+            <td projectValue='£ 100-125m'>275</td>
+            <td projectValue='£ 125-150m'>300</td>
+            <td projectValue='£150m+'>350</td>
+        </tr>
+        <tr product='ESPValue6'>
+            <td>ESPValue6</td>
+            <td projectValue='< £1m'>20</td>
+            <td projectValue='£ 1m'>5</td>
+            <td projectValue='£ 1-5m'>1</td>
+            <td projectValue='£ 5-10m'>2</td>
+            <td projectValue='£ 10-15m'>2</td>
+            <td projectValue='£ 15-20m'>4</td>
+            <td projectValue='£ 20-25m'>4</td>
+            <td projectValue='£ 25-30m'>4</td>
+            <td projectValue='£ 30-40m'>6</td>
+            <td projectValue='£ 40-50m'>6</td>
+            <td projectValue='£ 50-60m'>6</td>
+            <td projectValue='£ 60-80m'>8</td>
+            <td projectValue='£ 80-100m'>8</td>
+            <td projectValue='£ 100-125m'>10</td>
+            <td projectValue='£ 125-150m'>12</td>
+            <td projectValue='£150m+'>14</td>
+        </tr>
+        <tr product='ESPValue7'>
+            <td>ESPValue7</td>
+            <td projectValue='< £1m'>41</td>
+            <td projectValue='£ 1m'>51</td>
+            <td projectValue='£ 1-5m'>1</td>
+            <td projectValue='£ 5-10m'>4</td>
+            <td projectValue='£ 10-15m'>6</td>
+            <td projectValue='£ 15-20m'>8</td>
+            <td projectValue='£ 20-25m'>10</td>
+            <td projectValue='£ 25-30m'>12</td>
+            <td projectValue='£ 30-40m'>14</td>
+            <td projectValue='£ 40-50m'>16</td>
+            <td projectValue='£ 50-60m'>18</td>
+            <td projectValue='£ 60-80m'>20</td>
+            <td projectValue='£ 80-100m'>24</td>
+            <td projectValue='£ 100-125m'>28</td>
+            <td projectValue='£ 125-150m'>30</td>
+            <td projectValue='£150m+'>36</td>
+        </tr>
+        <tr product='ESPValue8'>
+            <td>ESPValue8</td>
+            <td projectValue='< £1m'>500</td>
+            <td projectValue='£ 1m'>10</td>
+            <td projectValue='£ 1-5m'>25</td>
+            <td projectValue='£ 5-10m'>4</td>
+            <td projectValue='£ 10-15m'>5</td>
+            <td projectValue='£ 15-20m'>7</td>
+            <td projectValue='£ 20-25m'>8</td>
+            <td projectValue='£ 25-30m'>10</td>
+            <td projectValue='£ 30-40m'>15</td>
+            <td projectValue='£ 40-50m'>13</td>
+            <td projectValue='£ 50-60m'>14</td>
+            <td projectValue='£ 60-80m'>16</td>
+            <td projectValue='£ 80-100m'>175</td>
+            <td projectValue='£ 100-125m'>19</td>
+            <td projectValue='£ 125-150m'>205</td>
+            <td projectValue='£150m+'>22</td>
+        </tr>
+        <tr product='ESPValue9'>
+            <td>ESPValue9</td>
+            <td projectValue='< £1m'>0.5</td>
+            <td projectValue='£ 1m'>1</td>
+            <td projectValue='£ 1-5m'>2.5</td>
+            <td projectValue='£ 5-10m'>5</td>
+            <td projectValue='£ 10-15m'>8</td>
+            <td projectValue='£ 15-20m'>10</td>
+            <td projectValue='£ 20-25m'>15</td>
+            <td projectValue='£ 25-30m'>20</td>
+            <td projectValue='£ 30-40m'>25</td>
+            <td projectValue='£ 40-50m'>28</td>
+            <td projectValue='£ 50-60m'>31</td>
+            <td projectValue='£ 60-80m'>35</td>
+            <td projectValue='£ 80-100m'>40</td>
+            <td projectValue='£ 100-125m'>45</td>
+            <td projectValue='£ 125-150m'>50</td>
+            <td projectValue='£150m+'>55</td>
+        </tr>
+        <tr product='ESPValue10'>
+            <td>ESPValue10</td>
+            <td projectValue='< £1m'>41</td>
+            <td projectValue='£ 1m'>5</td>
+            <td projectValue='£ 1-5m'>115</td>
+            <td projectValue='£ 5-10m'>445</td>
+            <td projectValue='£ 10-15m'>1</td>
+            <td projectValue='£ 15-20m'>1</td>
+            <td projectValue='£ 20-25m'>2</td>
+            <td projectValue='£ 25-30m'>2</td>
+            <td projectValue='£ 30-40m'>2</td>
+            <td projectValue='£ 40-50m'>2</td>
+            <td projectValue='£ 50-60m'>2</td>
+            <td projectValue='£ 60-80m'>14</td>
+            <td projectValue='£ 80-100m'>3</td>
+            <td projectValue='£ 100-125m'>3</td>
+            <td projectValue='£ 125-150m'>3</td>
+            <td projectValue='£150m+'>3</td>
+        </tr>
+    </tbody>
+</table>
+
+<table id="Wales">
+    <thead>Wales</thead>
+    <tr>
+        <td>Wales</td>
+        <td id="< £1m">
+            < £1m</td> <td id="£ 1m">£ 1m
+        </td>
+        <td id="£ 1-5m">£ 1-5m</td>
+        <td id="£ 5-10m">£ 5-10m</td>
+        <td id="£ 10-15m">£ 10-15m</td>
+        <td id="£ 15-20m">£ 15-20m</td>
+        <td id="£ 20-25m">£ 20-25m</td>
+        <td id="£ 25-30m">£ 25-30m</td>
+        <td id="£ 30-40m">£ 30-40m</td>
+        <td id="£ 40-50m">£ 40-50m</td>
+        <td id="£ 50-60m">£ 50-60m</td>
+        <td id="£ 60-80m">£ 60-80m</td>
+        <td id="£ 80-100m">£ 80-100m</td>
+        <td id="£ 100-125m">£ 100-125m</td>
+        <td id="£ 125-150m">£ 125-150m</td>
+        <td id="£150m+">£150m+</td>
+    </tr>
+    <tbody>
+        <tr product='ESPValue1'>
+            <td>ESPValue1</td>
+            <td projectValue='< £1m'>1000</td>
+            <td projectValue='£ 1m'>1000</td>
+            <td projectValue='£ 1-5m'>1000</td>
+            <td projectValue='£ 5-10m'>1000</td>
+            <td projectValue='£ 10-15m'>1000</td>
+            <td projectValue='£ 15-20m'>1000</td>
+            <td projectValue='£ 20-25m'>1000</td>
+            <td projectValue='£ 25-30m'>1000</td>
+            <td projectValue='£ 30-40m'>1000</td>
+            <td projectValue='£ 40-50m'>1000</td>
+            <td projectValue='£ 50-60m'>1000</td>
+            <td projectValue='£ 60-80m'>1000</td>
+            <td projectValue='£ 80-100m'>1000</td>
+            <td projectValue='£ 100-125m'>1000</td>
+            <td projectValue='£ 125-150m'>1000</td>
+            <td projectValue='£150m+'>1000</td>
+        </tr>
+        <tr product='ESPValue2'>
+            <td>ESPValue2</td>
+            <td projectValue='< £1m'>2000</td>
+            <td projectValue='£ 1m'>2000</td>
+            <td projectValue='£ 1-5m'>2000</td>
+            <td projectValue='£ 5-10m'>2000</td>
+            <td projectValue='£ 10-15m'>2000</td>
+            <td projectValue='£ 15-20m'>2000</td>
+            <td projectValue='£ 20-25m'>2000</td>
+            <td projectValue='£ 25-30m'>2000</td>
+            <td projectValue='£ 30-40m'>2000</td>
+            <td projectValue='£ 40-50m'>2000</td>
+            <td projectValue='£ 50-60m'>2000</td>
+            <td projectValue='£ 60-80m'>2000</td>
+            <td projectValue='£ 80-100m'>2000</td>
+            <td projectValue='£ 100-125m'>2000</td>
+            <td projectValue='£ 125-150m'>2000</td>
+            <td projectValue='£150m+'>2000</td>
+        </tr>
+        <tr product='ESPValue3'>
+            <td>ESPValue3</td>
+            <td projectValue='< £1m'>3000</td>
+            <td projectValue='£ 1m'>3000</td>
+            <td projectValue='£ 1-5m'>3000</td>
+            <td projectValue='£ 5-10m'>3000</td>
+            <td projectValue='£ 10-15m'>3000</td>
+            <td projectValue='£ 15-20m'>3000</td>
+            <td projectValue='£ 20-25m'>3000</td>
+            <td projectValue='£ 25-30m'>3000</td>
+            <td projectValue='£ 30-40m'>3000</td>
+            <td projectValue='£ 40-50m'>3000</td>
+            <td projectValue='£ 50-60m'>3000</td>
+            <td projectValue='£ 60-80m'>3000</td>
+            <td projectValue='£ 80-100m'>3000</td>
+            <td projectValue='£ 100-125m'>3000</td>
+            <td projectValue='£ 125-150m'>3000</td>
+            <td projectValue='£150m+'>3000</td>
+        </tr>
+        <tr product='ESPValue4'>
+            <td>ESPValue4</td>
+            <td projectValue='< £1m'>4000</td>
+            <td projectValue='£ 1m'>4000</td>
+            <td projectValue='£ 1-5m'>4000</td>
+            <td projectValue='£ 5-10m'>4000</td>
+            <td projectValue='£ 10-15m'>4000</td>
+            <td projectValue='£ 15-20m'>4000</td>
+            <td projectValue='£ 20-25m'>4000</td>
+            <td projectValue='£ 25-30m'>4000</td>
+            <td projectValue='£ 30-40m'>4000</td>
+            <td projectValue='£ 40-50m'>4000</td>
+            <td projectValue='£ 50-60m'>4000</td>
+            <td projectValue='£ 60-80m'>4000</td>
+            <td projectValue='£ 80-100m'>4000</td>
+            <td projectValue='£ 100-125m'>4000</td>
+            <td projectValue='£ 125-150m'>4000</td>
+            <td projectValue='£150m+'>4000</td>
+        </tr>
+        <tr product='ESPValue5'>
+            <td>ESPValue5</td>
+            <td projectValue='< £1m'>5000</td>
+            <td projectValue='£ 1m'>5000</td>
+            <td projectValue='£ 1-5m'>5000</td>
+            <td projectValue='£ 5-10m'>5000</td>
+            <td projectValue='£ 10-15m'>5000</td>
+            <td projectValue='£ 15-20m'>5000</td>
+            <td projectValue='£ 20-25m'>5000</td>
+            <td projectValue='£ 25-30m'>5000</td>
+            <td projectValue='£ 30-40m'>5000</td>
+            <td projectValue='£ 40-50m'>5000</td>
+            <td projectValue='£ 50-60m'>5000</td>
+            <td projectValue='£ 60-80m'>5000</td>
+            <td projectValue='£ 80-100m'>5000</td>
+            <td projectValue='£ 100-125m'>5000</td>
+            <td projectValue='£ 125-150m'>5000</td>
+            <td projectValue='£150m+'>5000</td>
+        </tr>
+        <tr product='ESPValue6'>
+            <td>ESPValue6</td>
+            <td projectValue='< £1m'>6000</td>
+            <td projectValue='£ 1m'>6000</td>
+            <td projectValue='£ 1-5m'>6000</td>
+            <td projectValue='£ 5-10m'>6000</td>
+            <td projectValue='£ 10-15m'>6000</td>
+            <td projectValue='£ 15-20m'>6000</td>
+            <td projectValue='£ 20-25m'>6000</td>
+            <td projectValue='£ 25-30m'>6000</td>
+            <td projectValue='£ 30-40m'>6000</td>
+            <td projectValue='£ 40-50m'>6000</td>
+            <td projectValue='£ 50-60m'>6000</td>
+            <td projectValue='£ 60-80m'>6000</td>
+            <td projectValue='£ 80-100m'>6000</td>
+            <td projectValue='£ 100-125m'>6000</td>
+            <td projectValue='£ 125-150m'>6000</td>
+            <td projectValue='£150m+'>6000</td>
+        </tr>
+        <tr product='ESPValue7'>
+            <td>ESPValue7</td>
+            <td projectValue='< £1m'>7000</td>
+            <td projectValue='£ 1m'>7000</td>
+            <td projectValue='£ 1-5m'>7000</td>
+            <td projectValue='£ 5-10m'>7000</td>
+            <td projectValue='£ 10-15m'>7000</td>
+            <td projectValue='£ 15-20m'>7000</td>
+            <td projectValue='£ 20-25m'>7000</td>
+            <td projectValue='£ 25-30m'>7000</td>
+            <td projectValue='£ 30-40m'>7000</td>
+            <td projectValue='£ 40-50m'>7000</td>
+            <td projectValue='£ 50-60m'>7000</td>
+            <td projectValue='£ 60-80m'>7000</td>
+            <td projectValue='£ 80-100m'>7000</td>
+            <td projectValue='£ 100-125m'>7000</td>
+            <td projectValue='£ 125-150m'>7000</td>
+            <td projectValue='£150m+'>7000</td>
+        </tr>
+        <tr product='ESPValue8'>
+            <td>ESPValue8</td>
+            <td projectValue='< £1m'>8000</td>
+            <td projectValue='£ 1m'>8000</td>
+            <td projectValue='£ 1-5m'>8000</td>
+            <td projectValue='£ 5-10m'>8000</td>
+            <td projectValue='£ 10-15m'>8000</td>
+            <td projectValue='£ 15-20m'>8000</td>
+            <td projectValue='£ 20-25m'>8000</td>
+            <td projectValue='£ 25-30m'>8000</td>
+            <td projectValue='£ 30-40m'>8000</td>
+            <td projectValue='£ 40-50m'>8000</td>
+            <td projectValue='£ 50-60m'>8000</td>
+            <td projectValue='£ 60-80m'>8000</td>
+            <td projectValue='£ 80-100m'>8000</td>
+            <td projectValue='£ 100-125m'>8000</td>
+            <td projectValue='£ 125-150m'>8000</td>
+            <td projectValue='£150m+'>8000</td>
+        </tr>
+        <tr product='ESPValue9'>
+            <td>ESPValue9</td>
+            <td projectValue='< £1m'>9000</td>
+            <td projectValue='£ 1m'>9000</td>
+            <td projectValue='£ 1-5m'>9000</td>
+            <td projectValue='£ 5-10m'>9000</td>
+            <td projectValue='£ 10-15m'>9000</td>
+            <td projectValue='£ 15-20m'>9000</td>
+            <td projectValue='£ 20-25m'>9000</td>
+            <td projectValue='£ 25-30m'>9000</td>
+            <td projectValue='£ 30-40m'>9000</td>
+            <td projectValue='£ 40-50m'>9000</td>
+            <td projectValue='£ 50-60m'>9000</td>
+            <td projectValue='£ 60-80m'>9000</td>
+            <td projectValue='£ 80-100m'>9000</td>
+            <td projectValue='£ 100-125m'>9000</td>
+            <td projectValue='£ 125-150m'>9000</td>
+            <td projectValue='£150m+'>9000</td>
+        </tr>
+        <tr product='ESPValue10'>
+            <td>ESPValue10</td>
+            <td projectValue='< £1m'>10000</td>
+            <td projectValue='£ 1m'>10000</td>
+            <td projectValue='£ 1-5m'>10000</td>
+            <td projectValue='£ 5-10m'>10000</td>
+            <td projectValue='£ 10-15m'>10000</td>
+            <td projectValue='£ 15-20m'>10000</td>
+            <td projectValue='£ 20-25m'>10000</td>
+            <td projectValue='£ 25-30m'>10000</td>
+            <td projectValue='£ 30-40m'>10000</td>
+            <td projectValue='£ 40-50m'>10000</td>
+            <td projectValue='£ 50-60m'>10000</td>
+            <td projectValue='£ 60-80m'>10000</td>
+            <td projectValue='£ 80-100m'>10000</td>
+            <td projectValue='£ 100-125m'>10000</td>
+            <td projectValue='£ 125-150m'>10000</td>
+            <td projectValue='£150m+'>10000</td>
+        </tr>
+    </tbody>
+</table>
+
+<table id="EnvironmentalServices">
+    <thead>EnvironmentalServices</thead>
+    <tr>
+        <td>EnvironmentalServices</td>
+        <td id="< £1m">
+            < £1m</td> <td id="£ 1m">£ 1m
+        </td>
+        <td id="£ 1-5m">£ 1-5m</td>
+        <td id="£ 5-10m">£ 5-10m</td>
+        <td id="£ 10-15m">£ 10-15m</td>
+        <td id="£ 15-20m">£ 15-20m</td>
+        <td id="£ 20-25m">£ 20-25m</td>
+        <td id="£ 25-30m">£ 25-30m</td>
+        <td id="£ 30-40m">£ 30-40m</td>
+        <td id="£ 40-50m">£ 40-50m</td>
+        <td id="£ 50-60m">£ 50-60m</td>
+        <td id="£ 60-80m">£ 60-80m</td>
+        <td id="£ 80-100m">£ 80-100m</td>
+        <td id="£ 100-125m">£ 100-125m</td>
+        <td id="£ 125-150m">£ 125-150m</td>
+        <td id="£150m+">£150m+</td>
+    </tr>
+    <tbody>
+        <tr product='ESPValue1'>
+            <td>ESPValue1</td>
+            <td projectValue='< £1m'>1</td>
+            <td projectValue='£ 1m'>1</td>
+            <td projectValue='£ 1-5m'>1</td>
+            <td projectValue='£ 5-10m'>1</td>
+            <td projectValue='£ 10-15m'>1</td>
+            <td projectValue='£ 15-20m'>1</td>
+            <td projectValue='£ 20-25m'>1</td>
+            <td projectValue='£ 25-30m'>1</td>
+            <td projectValue='£ 30-40m'>1</td>
+            <td projectValue='£ 40-50m'>1</td>
+            <td projectValue='£ 50-60m'>1</td>
+            <td projectValue='£ 60-80m'>1</td>
+            <td projectValue='£ 80-100m'>1</td>
+            <td projectValue='£ 100-125m'>1</td>
+            <td projectValue='£ 125-150m'>1</td>
+            <td projectValue='£150m+'>1</td>
+        </tr>
+        <tr product='ESPValue2'>
+            <td>ESPValue2</td>
+            <td projectValue='< £1m'>2</td>
+            <td projectValue='£ 1m'>2</td>
+            <td projectValue='£ 1-5m'>2</td>
+            <td projectValue='£ 5-10m'>2</td>
+            <td projectValue='£ 10-15m'>2</td>
+            <td projectValue='£ 15-20m'>2</td>
+            <td projectValue='£ 20-25m'>2</td>
+            <td projectValue='£ 25-30m'>2</td>
+            <td projectValue='£ 30-40m'>2</td>
+            <td projectValue='£ 40-50m'>2</td>
+            <td projectValue='£ 50-60m'>2</td>
+            <td projectValue='£ 60-80m'>2</td>
+            <td projectValue='£ 80-100m'>2</td>
+            <td projectValue='£ 100-125m'>2</td>
+            <td projectValue='£ 125-150m'>2</td>
+            <td projectValue='£150m+'>2</td>
+        </tr>
+        <tr product='ESPValue3'>
+            <td>ESPValue3</td>
+            <td projectValue='< £1m'>3</td>
+            <td projectValue='£ 1m'>3</td>
+            <td projectValue='£ 1-5m'>3</td>
+            <td projectValue='£ 5-10m'>3</td>
+            <td projectValue='£ 10-15m'>3</td>
+            <td projectValue='£ 15-20m'>3</td>
+            <td projectValue='£ 20-25m'>3</td>
+            <td projectValue='£ 25-30m'>3</td>
+            <td projectValue='£ 30-40m'>3</td>
+            <td projectValue='£ 40-50m'>3</td>
+            <td projectValue='£ 50-60m'>3</td>
+            <td projectValue='£ 60-80m'>3</td>
+            <td projectValue='£ 80-100m'>3</td>
+            <td projectValue='£ 100-125m'>3</td>
+            <td projectValue='£ 125-150m'>3</td>
+            <td projectValue='£150m+'>3</td>
+        </tr>
+        <tr product='ESPValue4'>
+            <td>ESPValue4</td>
+            <td projectValue='< £1m'>4
+            <td projectValue='£ 1m'>4</td>
+            <td projectValue='£ 1-5m'>4</td>
+            <td projectValue='£ 5-10m'>4</td>
+            <td projectValue='£ 10-15m'>4</td>
+            <td projectValue='£ 15-20m'>4</td>
+            <td projectValue='£ 20-25m'>4</td>
+            <td projectValue='£ 25-30m'>4</td>
+            <td projectValue='£ 30-40m'>4</td>
+            <td projectValue='£ 40-50m'>4</td>
+            <td projectValue='£ 50-60m'>4</td>
+            <td projectValue='£ 60-80m'>4</td>
+            <td projectValue='£ 80-100m'>4</td>
+            <td projectValue='£ 100-125m'>4</td>
+            <td projectValue='£ 125-150m'>4</td>
+            <td projectValue='£150m+'>4</td>
+        </tr>
+        <tr product='ESPValue5'>
+            <td>ESPValue5</td>
+            <td projectValue='< £1m'>5</td>
+            <td projectValue='£ 1m'>5</td>
+            <td projectValue='£ 1-5m'>5</td>
+            <td projectValue='£ 5-10m'>5</td>
+            <td projectValue='£ 10-15m'>5</td>
+            <td projectValue='£ 15-20m'>5</td>
+            <td projectValue='£ 20-25m'>5</td>
+            <td projectValue='£ 25-30m'>5</td>
+            <td projectValue='£ 30-40m'>5</td>
+            <td projectValue='£ 40-50m'>5</td>
+            <td projectValue='£ 50-60m'>5</td>
+            <td projectValue='£ 60-80m'>5</td>
+            <td projectValue='£ 80-100m'>5</td>
+            <td projectValue='£ 100-125m'>5</td>
+            <td projectValue='£ 125-150m'>5</td>
+            <td projectValue='£150m+'>5</td>
+        </tr>
+        <tr product='ESPValue6'>
+            <td>ESPValue6</td>
+            <td projectValue='< £1m'>6</td>
+            <td projectValue='£ 1m'>6</td>
+            <td projectValue='£ 1-5m'>6</td>
+            <td projectValue='£ 5-10m'>6</td>
+            <td projectValue='£ 10-15m'>6</td>
+            <td projectValue='£ 15-20m'>6</td>
+            <td projectValue='£ 20-25m'>6</td>
+            <td projectValue='£ 25-30m'>6</td>
+            <td projectValue='£ 30-40m'>6</td>
+            <td projectValue='£ 40-50m'>6</td>
+            <td projectValue='£ 50-60m'>6</td>
+            <td projectValue='£ 60-80m'>6</td>
+            <td projectValue='£ 80-100m'>6</td>
+            <td projectValue='£ 100-125m'>6</td>
+            <td projectValue='£ 125-150m'>6</td>
+            <td projectValue='£150m+'>6</td>
+        </tr>
+        <tr product='ESPValue7'>
+            <td>ESPValue7</td>
+            <td projectValue='< £1m'>7</td>
+            <td projectValue='£ 1m'>7</td>
+            <td projectValue='£ 1-5m'>7</td>
+            <td projectValue='£ 5-10m'>7</td>
+            <td projectValue='£ 10-15m'>7</td>
+            <td projectValue='£ 15-20m'>7</td>
+            <td projectValue='£ 20-25m'>7</td>
+            <td projectValue='£ 25-30m'>7</td>
+            <td projectValue='£ 30-40m'>7</td>
+            <td projectValue='£ 40-50m'>7</td>
+            <td projectValue='£ 50-60m'>7</td>
+            <td projectValue='£ 60-80m'>7</td>
+            <td projectValue='£ 80-100m'>7</td>
+            <td projectValue='£ 100-125m'>7</td>
+            <td projectValue='£ 125-150m'>7</td>
+            <td projectValue='£150m+'>7</td>
+        </tr>
+        <tr product='ESPValue8'>
+            <td>ESPValue8</td>
+            <td projectValue='< £1m'> 8</td>
+            <td projectValue='£ 1m'> 8</td>
+            <td projectValue='£ 1-5m'> 8</td>
+            <td projectValue='£ 5-10m'> 8</td>
+            <td projectValue='£ 10-15m'>8</td>
+            <td projectValue='£ 15-20m'>8</td>
+            <td projectValue='£ 20-25m'>8</td>
+            <td projectValue='£ 25-30m'>8</td>
+            <td projectValue='£ 30-40m'>8</td>
+            <td projectValue='£ 40-50m'>8</td>
+            <td projectValue='£ 50-60m'>8</td>
+            <td projectValue='£ 60-80m'>8</td>
+            <td projectValue='£ 80-100m'>8</td>
+            <td projectValue='£ 100-125m'>8</td>
+            <td projectValue='£ 125-150m'>8</td>
+            <td projectValue='£150m+'>8</td>
+        </tr>
+        <tr product='ESPValue9'>
+            <td>ESPValue9</td>
+            <td projectValue='< £1m'>9</td>
+            <td projectValue='£ 1m'>9</td>
+            <td projectValue='£ 1-5m'>9</td>
+            <td projectValue='£ 5-10m'>9</td>
+            <td projectValue='£ 10-15m'>9</td>
+            <td projectValue='£ 15-20m'>9</td>
+            <td projectValue='£ 20-25m'>9</td>
+            <td projectValue='£ 25-30m'>9</td>
+            <td projectValue='£ 30-40m'>9</td>
+            <td projectValue='£ 40-50m'>9</td>
+            <td projectValue='£ 50-60m'>9</td>
+            <td projectValue='£ 60-80m'>9</td>
+            <td projectValue='£ 80-100m'>9</td>
+            <td projectValue='£ 100-125m'>9</td>
+            <td projectValue='£ 125-150m'>9</td>
+            <td projectValue='£150m+'>9</td>
+        </tr>
+        <tr product='ESPValue10'>
+            <td>ESPValue10</td>
+            <td projectValue='< £1m'>10</td>
+            <td projectValue='£ 1m'>10</td>
+            <td projectValue='£ 1-5m'>10</td>
+            <td projectValue='£ 5-10m'>10</td>
+            <td projectValue='£ 10-15m'>10</td>
+            <td projectValue='£ 15-20m'>10</td>
+            <td projectValue='£ 20-25m'>10</td>
+            <td projectValue='£ 25-30m'>10</td>
+            <td projectValue='£ 30-40m'>10</td>
+            <td projectValue='£ 40-50m'>10</td>
+            <td projectValue='£ 50-60m'>10</td>
+            <td projectValue='£ 60-80m'>10</td>
+            <td projectValue='£ 80-100m'>10</td>
+            <td projectValue='£ 100-125m'>10</td>
+            <td projectValue='£ 125-150m'>10</td>
+            <td projectValue='£150m+'>10</td>
+        </tr>
+    </tbody>
+</table> -->

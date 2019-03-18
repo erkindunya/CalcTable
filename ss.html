@@ -1,0 +1,27 @@
+<script data-require="jquery@2.1.1" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="ui-widget">
+        <select id="pick">
+            <option value="">Select one...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <select id="drop">
+            <option value="">Select one...</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+        </select>
+    </div>
+<script>
+
+    $("#drop").change(function () {
+        var end = this.value;
+        //var firstDropVal = $('#pick').val();
+        console.log(end);
+    });
+
+</script>

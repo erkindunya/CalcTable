@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script data-require="jquery@2.1.1" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <!-- <input class="form-control input-md" id="searchbox" name="searchbox" type="text" placeholder="search..." /> -->
+  <select multiple="1" class="form-control" id="duallistbox_demo2" size="5" name="duallistbox_demo2[]">
+        <option value=""></option>
+    <option value="1">Audio - Speaker</option>
+    <option value="2">Logistics - Chairs</option>
+  </select>
+  <!-- <input class="form-control input-md" id="quantity" name="quantity" type="text" value="1" /> -->
+  <select class="form-control" multiple="1" size="5" id="number" name="number">
+    <option value="1" selected="selected">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <button id="btnCombine" class="btn btn-primary">combineValue</button>
+  <br />
+  <select id="SelectedValues" class="form-control"></select>
+</body>
+<script>
+// jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
+//   return this.each(function() {
+//     var select = this;
+//     var options = [];
+//     $(select).find('option').each(function() {
+//       options.push({
+//         value: $(this).val(),
+//         text: $(this).text()
+//       });
+//     });
+//     $(select).data('options', options);
+//     $(textbox).bind('change keyup', function() {
+//       var options = $(select).empty().data('options');
+//       var search = $.trim($(this).val());
+//       var regex = new RegExp(search, "gi");
+//       $.each(options, function(i) {
+//         var option = options[i];
+//         if (option.text.match(regex) !== null) {
+//           $(select).append(
+//             $('<option>').text(option.text).val(option.value)
+//           );
+//         }
+//       });
+//       if (selectSingleMatch === true && $(select).children().length === 1) {
+//         $(select).children().get(0).selected = true;
+//       }
+//     });
+//   });
+// };
+// $(function() {
+// //   $('#duallistbox_demo2').filterByText($('#searchbox'), true);
+// //   $('#number').filterByText($('#quantity'), true);
+//   //called when key is pressed in textbox
+//   $("#quantity").keypress(function(e) {
+//     //if the letter is not digit then display error and don't type anything
+//     if (e.which != 8 && e.which !== 0 && (e.which < 48 || e.which > 57)) {
+//       //display error message
+//       $("#errmsg").html("Digits Only").show().fadeOut("slow");
+//       return false;
+//     }
+//   });
+//   $("#btnCombine").click(function() {
+//     $("#SelectedValues").append("<option>" + $("#duallistbox_demo2 option:selected").val()
+//     + "" + $("#number").val());
+//   });
+// });
+
+
+$(function () {
+    $("#btnCombine").click(function() {
+    var myString = $('#SelectedValues').val();
+    
+    var arr = myString.split('-');
+    var text = arr[0] + "-" + arr[1];
+    $("#duallistbox_demo2 option:contains(" + text + ")").attr('selected', 'selected'); 
+    $("#number").val(arr[2]);   
+    $("#SelectedValues").append("<option>" + $("#duallistbox_demo2 option:selected").val()
+    + "" + $("#number").val());
+ });
+});
+</script>
+</html>
+
+$('.dropone').change(function() {    
+    var item=$(this);
+    alert(item.val())
+    $(".droptwo").empty();
+    $(".droptwo").load("ajaxdropdown.aspx?drpType=room
+                        &roomid=" +item.attr("value") + "&ts=" + $.now());
+});
