@@ -28,13 +28,37 @@ function onSelectChangeMind() {
         businessUnit = $("#BusinessUnit").find('option:selected'),
         geoLocation = $("#GeoLocation").find('option:selected');
         projectValue = $("#projectValue").find('option:selected');
+        
+        // var ESP1calc = 27165;
+        // var ESP2calc = 3241;
+        // var ESP3calc = 27165;
+        // var ESP4calc = 185.47;
+        // var ESP5calc = 32;
+        // var ESP6calc = 20.92;
+        // var ESP7calc = 32;
+        // var ESP8calc = 50;
+        // var ESP9calc = 100;
+        // var ESP10calc = 50;
 
-        if (value = ESPValue1.attr('rel')) {
+        // $("#ESPValue1").value = 27165;
+        $("#ESPValue2").value = 3241;
+        $("#ESPValue3").value = 27165;
+        $("#ESPValue4").value = 185.47;
+        $("#ESPValue5").value = 32;
+        $("#ESPValue6").value = 20.92;
+        $("#ESPValue7").value = 320;
+        $("#ESPValue8").value = 50;
+        $("#ESPValue9").value = 100;
+        $("#ESPValue10").value = 50;
+
+        if (value = $("#ESPValue1").value = 27165) {
             total += parseInt(value);
+            console.log("val 1 ", value );
         }
     
         if (value = ESPValue2.attr('rel')) {
             total += parseInt(value);
+            console.log("val 2 ", value );
         }
     
         $("#outputMind").html(total);
@@ -94,27 +118,6 @@ function myCalculate() {
 
         // Amount to multiply.
 
-        var ESP1calc = 27165;
-        var ESP2calc = 3241;
-        var ESP3calc = 27165;
-        var ESP4calc = 185.47;
-        var ESP5calc = 32;
-        var ESP6calc = 20.92;
-        var ESP7calc = 32;
-        var ESP8calc = 50;
-        var ESP9calc = 100;
-        var ESP10calc = 50;
-
-        $("#ESPValue1").value = ESP1calc;
-        $("#ESPValue2").value = ESP2calc;
-        $("#ESPValue3").value = ESP3calc;
-        $("#ESPValue4").value = ESP4calc;
-        $("#ESPValue5").value = ESP5calc;
-        $("#ESPValue6").value = ESP6calc;
-        $("#ESPValue7").value = ESP7calc;
-        $("#ESPValue8").value = ESP8calc;
-        $("#ESPValue9").value = ESP9calc;
-        $("#ESPValue10").value = ESP10calc;
         var multiplier = $(
             `table#${tableToUse} tbody > tr[product='${currentProductId}'] > td[projectValue='${projectValue}']`
         ).text();
@@ -126,7 +129,7 @@ function myCalculate() {
         //     total += parseInt(value);
         // }
         // Calculate the figure and update the result element.  result.text($(this).val() * multiplier);
-        result.text($(this).val()) * multiplier;
+        result.text($(this).attr("ref")) * multiplier;
         // result.text(multiplierSemtricaValues * multiplier);
 
         //         $("#BusinessUnit").bind("change keyup", function(event){
