@@ -2632,11 +2632,11 @@
 
         }
 
-        var tableToUseSemtrica = "multiplierSemtricaValues";
-        //alert("Please select the product origin and volume.", tableToUseSemtrica);
-        var multiplierSemtricaValues = $(
-            `table#${tableToUseSemtrica} tbody > tr[Semtrica='${currentSemtricaId}'] > td[valueToCalc='${valueToCalc}']`
-        ).text();
+        // var tableToUseSemtrica = "multiplierSemtricaValues";
+        // //alert("Please select the product origin and volume.", tableToUseSemtrica);
+        // var multiplierSemtricaValues = $(
+        //     `table#${tableToUseSemtrica} tbody > tr[Semtrica='${currentSemtricaId}'] > td[valueToCalc='${valueToCalc}']`
+        // ).text();
 
         // Amount to multiply.
         var multiplier = $(
@@ -2645,7 +2645,7 @@
 
         // A <span> element, to be populated with the calculated product projectValue.
         var result = $("<span name='result'>");
-        result.text(multiplierSemtricaValues * multiplier);
+        result.text($(this).val() * multiplier);
         // Calculate the figure and update the result element.
         // var ESP1calc = 10 * multiplier;
         // var ESP2calc = 100 * multiplier;
