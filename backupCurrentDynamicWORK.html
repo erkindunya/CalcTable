@@ -60,45 +60,53 @@
         <option value="£150m+">£150m+</option>
     </select>
 </div>
+<div id="sumDiv" class="testdiv">  
 <div>
     <label class="description" for="ESPValue1">full time employment opportunity created</label>
-    <input id="ESPValue1" name="ESPValue1" class="element text medium" type="text" maxlength="255" value="1" />
+    <input id="ESPValue1" name="ESPValue1" class="element text medium" type="text" maxlength="255" value="27165" readonly="true"/>
 </div>
 <div>
     <label class="description" for="ESPValue2">part time employment opportunity created</label>
-    <input id="ESPValue2" name="ESPValue2" class="element text medium" type="text" maxlength="255" value="10" />
+    <input id="ESPValue2" name="ESPValue2" class="element text medium" type="text" maxlength="255" value="3241"  readonly="true"/>
 </div>
 <div>
     <label class="description" for="ESPValue3">apprenticeship opportunity created</label>
-    <input id="ESPValue3" name="ESPValue3" class="element text medium" type="text" maxlength="255" value="100" />
+    <input id="ESPValue3" name="ESPValue3" class="element text medium" type="text" maxlength="255" value="27165" readonly="true"/>
 </div>
 <div>
     <label class="description" for="ESPValue4">apprenticeship weeks on site</label>
-    <input id="ESPValue4" name="ESPValue4" class="element text medium" type="text" maxlength="255" value="1000" />
+    <input id="ESPValue4" name="ESPValue4" class="element text medium" type="text" maxlength="255" value="185.47" readonly="true" />
 </div>
 <div>
     <label class="description" for="ESPValue5">school pupils engaged no of pupils</label>
-    <input id="ESPValue5" name="ESPValue5" class="element text medium" type="text" maxlength="255" value="2000" />
+    <input id="ESPValue5" name="ESPValue5" class="element text medium" type="text" maxlength="255" value="32" readonly="true" />
 </div>
 <div>
     <label class="description" for="ESPValue6">work experience under 19 number of weeks</label>
-    <input id="ESPValue6" name="ESPValue6" class="element text medium" type="text" maxlength="255" value="3000" />
+    <input id="ESPValue6" name="ESPValue6" class="element text medium" type="text" maxlength="255" value="20.92" readonly="true" />
 </div>
 <div>
     <label class="description" for="ESPValue7">work experience over 19 number of weeks</label>
-    <input id="ESPValue7" name="ESPValue7" class="element text medium" type="text" maxlength="255" value="4000" />
+    <input id="ESPValue7" name="ESPValue7" class="element text medium" type="text" maxlength="255" value="320" readonly="true" />
 </div>
 <div>
     <label class="description" for="ESPValue8">proffesional development training number of days</label>
-    <input id="ESPValue8" name="ESPValue8" class="element text medium" type="text" maxlength="255" value="5000" />
+    <input id="ESPValue8" name="ESPValue8" class="element text medium" type="text" maxlength="255" value="50" readonly="true" />
 </div>
 <div>
     <label class="description" for="ESPValue9">health and safety training number of days</label>
-    <input id="ESPValue9" name="ESPValue9" class="element text medium" type="text" maxlength="255" value="6000" />
+    <input id="ESPValue9" name="ESPValue9" class="element text medium" type="text" maxlength="255" value="100" readonly="true" />
 </div>
 <div>
     <label class="description" for="ESPValue10">kier ambassadors trained</label>
-    <input id="ESPValue10" name="ESPValue10" class="element text medium" type="text" maxlength="255" value="7000" />
+    <input id="ESPValue10" name="ESPValue10" class="element text medium" type="text" maxlength="255" value="50" readonly="true" />
+</div>
+
+<div>
+    <label class="description" for="Total">Total</label>
+    <input id="Total" name="Total" class="element text medium" type="text" maxlength="255"  readonly="true" />
+</div>
+
 </div>
 <!-- RegionalBuilding England start -->
 <div class="">
@@ -2592,24 +2600,35 @@
 <!-- multiplierSemtricaValues   END-->
 
 <script>
-    $("input[type='text'].element").blur(function (e) {
-        // Current product ID, e.g. "Apple", "Apricot", etc.
-        var currentProductId = this.id;
-        
-        // Current product ID, e.g. "Apple", "Apricot", etc.
-        var currentSemtricaId = this.id;
 
-        // projectValue of products.
-        var projectValue = $("#projectValue").val();
-        var valueToCalc = $("#valueToCalc").val();
+function myLoad() {
+        var ESPValue1   = 1;
+        var ESPValue2   = 1;
+        var ESPValue3   = 1;
+        var ESPValue4   = 1 ;
+        var ESPValue5   = 1;
+        var ESPValue6   = 1;
+        var ESPValue7   = 1;
+        var ESPValue8   = 1;
+        var ESPValue9   = 1;
+        var ESPValue10 = 1;
+    $("#ESPValue1").value = ESPValue1;
+    $("#ESPValue2").value = ESPValue2;
+    $("#ESPValue3").value = ESPValue3;
+    $("#ESPValue4").value = ESPValue4;
+    $("#ESPValue5").value = ESPValue5;
+    $("#ESPValue6").value = ESPValue6;
+    $("#ESPValue7").value = ESPValue7;
+    $("#ESPValue8").value = ESPValue8;
+    $("#ESPValue9").value = ESPValue9;
+    $("#ESPValue10").value = ESPValue10;
+}
 
-        // businessUnit
-        var businessUnit = $("#BusinessUnit").val();
-        //swal('Oops...', businessUnit, 'error');
-
-        // Geographical location of the product.
-        var geographicalLocation = $("#GeoLocation").val();
-
+function myCalculate(){
+  var projectValue = $("#projectValue").val();
+  var businessUnit = $("#BusinessUnit").val();
+  var geographicalLocation = $("#GeoLocation").val();
+  
         // Ensure projectValue and businessUnit have been selected.
         if (projectValue === "" || businessUnit === "" || geographicalLocation === "") {
             // swal("Please select the product origin and projectValue.");
@@ -2631,52 +2650,182 @@
             var tableToUse = geographicalLocation !== "" ? businessUnit : geographicalLocation;
 
         }
+  
+ // var tableToUse = geographicalLocation === "" ? productOrigin : geographicalLocation;
+  
+  $("input[type='text']").each(function(i){
+    
+    // Current product ID, e.g. "Apple", "Apricot", etc.
+	  var currentProductId = $(this).attr('id');
+    
+    // Amount to multiply.
+    var multiplier = $(`table#${tableToUse} tbody > tr[product='${currentProductId}'] > td[projectValue='${projectValue}']`).text();
+    
+    // A <span> element, to be populated with the calculated product volume.
+	var result = $("<span name='result'>");
 
-        // var tableToUseSemtrica = "multiplierSemtricaValues";
-        // //alert("Please select the product origin and volume.", tableToUseSemtrica);
-        // var multiplierSemtricaValues = $(
-        //     `table#${tableToUseSemtrica} tbody > tr[Semtrica='${currentSemtricaId}'] > td[valueToCalc='${valueToCalc}']`
-        // ).text();
+	// Calculate the figure and update the result element.
+    result.text($(this).val() * multiplier); 
+    
 
-        // Amount to multiply.
-        var multiplier = $(
-            `table#${tableToUse} tbody > tr[product='${currentProductId}'] > td[projectValue='${projectValue}']`
-        ).text();
 
-        // A <span> element, to be populated with the calculated product projectValue.
-        var result = $("<span name='result'>");
-        result.text($(this).val() * multiplier);
-        // Calculate the figure and update the result element.
-        // var ESP1calc = 10 * multiplier;
-        // var ESP2calc = 100 * multiplier;
-        // var ESP3calc = 200 * multiplier;
-        // var ESP3calc = 300 * multiplier;
-        // var ESP4calc = 400 * multiplier;
-        // var ESP5calc = 500 * multiplier;
-        // var ESP6calc = 600 * multiplier;
-        // var ESP7calc = 700 * multiplier;
-        // var ESP8calc = 800 * multiplier;
-        // var ESP9calc = 900 * multiplier;
-        // var ESP10calc = 1000 * multiplier;
-        // result.text(ESP1calc);
-        // result.text(ESP2calc);
-        // result.text(ESP3calc);
-        // result.text(ESP4calc);
-        // result.text(ESP5calc);
-        // result.text(ESP6calc);
-        // result.text(ESP7calc);
-        // result.text(ESP8calc);
-        // result.text(ESP9calc);
-        // result.text(ESP10calc);
-        //result.text($(this).val() * multiplier);
+	// Remove any previously added <span> result elements.
+	$(this).next("span").remove();
 
-        // Remove any previously added <span> result elements.
-        $(this).next("span").remove();
+	// Insert result after the current input field.
+    $(this).after(result);
+    // var results += result;
+    // $("#Total")= results;
 
-        // Insert result after the current input field.
-        $(this).after(result);
-    })
+    
+
+
+    
+  }); 
+  
+}
+
+myLoad();
+
+$('.select').on('change', myCalculate);
+$("input[type='text']").on('keyup', myCalculate);
+
+
+
+    // $("input[type='text'].element").blur(function (e) {
+   
+    //     // Current product ID, e.g. "Apple", "Apricot", etc.
+    //     var currentProductId = this.id;
+        
+    //     // Current product ID, e.g. "Apple", "Apricot", etc.
+    //     var currentSemtricaId = this.id;
+
+    //     // projectValue of products.
+    //     var projectValue = $("#projectValue").val();
+    //     var valueToCalc = $("#valueToCalc").val();
+
+    //     // businessUnit
+    //     var businessUnit = $("#BusinessUnit").val();
+    //     //swal('Oops...', businessUnit, 'error');
+
+    //     // Geographical location of the product.
+    //     var geographicalLocation = $("#GeoLocation").val();
+
+    //     // Ensure projectValue and businessUnit have been selected.
+    //     if (projectValue === "" || businessUnit === "" || geographicalLocation === "") {
+    //         // swal("Please select the product origin and projectValue.");
+    //         swal('Oops...', 'Please select the business Unit, geographical Location  and projectValue.',
+    //             'error');
+    //         // alert("Please select the businessUnit and projectValue.");
+    //         return;
+    //     }
+
+
+    //     // If no geographical location is set, use businessUnit.
+    //     if (businessUnit === "RegionalBuilding" && geographicalLocation === "England") {
+    //         var tableToUse = "RegionalBuilding";
+    //     } else if (businessUnit === "RegionalBuilding" && geographicalLocation === "Wales") {
+    //         var tableToUse = "RegionalBuildingWales";
+    //     } else if (businessUnit === "RegionalBuilding" && geographicalLocation === "Scotland") {
+    //         var tableToUse = "RegionalBuildingScotland";
+    //     } else {
+    //         var tableToUse = geographicalLocation !== "" ? businessUnit : geographicalLocation;
+
+    //     }
+
+    //     // var tableToUseSemtrica = "multiplierSemtricaValues";
+    //     // //alert("Please select the product origin and volume.", tableToUseSemtrica);
+    //     // var multiplierSemtricaValues = $(
+    //     //     `table#${tableToUseSemtrica} tbody > tr[Semtrica='${currentSemtricaId}'] > td[valueToCalc='${valueToCalc}']`
+    //     // ).text();
+
+    //     // Amount to multiply.
+
+    //     var multiplier = $(
+    //         `table#${tableToUse} tbody > tr[product='${currentProductId}'] > td[projectValue='${projectValue}']`
+    //     ).text();
+
+    //     // A <span> element, to be populated with the calculated product projectValue.
+    //     var result = $("<span name='result'>");
+    //     // result.text(multiplierSemtricaValues * multiplier);
+    //     // Calculate the figure and update the result element.
+    //     // var ESP1calc = 10 * multiplier;
+    //     // var ESP2calc = 100 * multiplier;
+    //     // var ESP3calc = 200 * multiplier;
+    //     // var ESP3calc = 300 * multiplier;
+    //     // var ESP4calc = 400 * multiplier;
+    //     // var ESP5calc = 500 * multiplier;
+    //     // var ESP6calc = 600 * multiplier;
+    //     // var ESP7calc = 700 * multiplier;
+    //     // var ESP8calc = 800 * multiplier;
+    //     // var ESP9calc = 900 * multiplier;
+    //     // var ESP10calc = 1000 * multiplier;
+    //     // result.text(ESP1calc);
+    //     // result.text(ESP2calc);
+    //     // result.text(ESP3calc);
+    //     // result.text(ESP4calc);
+    //     // result.text(ESP5calc);
+    //     // result.text(ESP6calc);
+    //     // result.text(ESP7calc);
+    //     // result.text(ESP8calc);
+    //     // result.text(ESP9calc);
+    //     // result.text(ESP10calc);
+
+    //     result.text($(this).val() * multiplier);
+    //     // Remove any previously added <span> result elements.
+    //     $(this).next("span").remove();
+
+    //     // Insert result after the current input field.
+    //     $(this).after(result);
+
+    // })
+
 </script>
+<!-- <script>
+
+var sum = 0;
+$('span[id^="s"]').each(function(){
+      txt = $(this).text();
+      sum += txt? txt*1 : 0;
+});
+alert(sum);
+
+
+    var sum = 0;
+    $('.testdiv').children("span").each(function() {
+
+        if(!isNaN(this.value) && this.value.length!=0) 
+  {
+    sum += parseFloat(this.value);     
+    alert(sum);       
+  }         
+}); -->
+    //var $this = $(this);
+    //if ($this.is(':checked')) {
+//         var currentValue = parseInt($(".fieldsbankrecon1").val(),10);
+//         sum = sum  + currentValue;
+//         //}
+//          alert(message);
+
+//     });
+
+
+//     function getDivSum(selector) {
+// 	var sum = 0;
+// 	$(selector).each(function() {
+// 		$(this).children("span").each(function() {
+// 			sum += parseInt($(this).html());
+// 		});
+// 	});
+// 	return sum;
+// }
+// $(document).ready(function() {
+// 	console.log(getDivSum("#sumDiv"));
+// 	// console.log(getDivSum("#M-2"));
+// 	// console.log(getDivSum("#M-1, #M-2"));
+// });
+
+<!-- </script> -->
 
 
 <!-- <table id="Scotland">
