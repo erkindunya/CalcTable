@@ -1,0 +1,116 @@
+br mode="hold" /> "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html ng-app="">
+
+
+<head>
+
+    <title>Untitled Page</title>
+<link href="mathquill.css" rel="stylesheet" />
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+   
+    <script>
+        angular.module("unit5",[]).controller("sum1", function sum1(){
+        var first = this;
+        first.greeting = "This is my demo";
+        var sec = this;
+        sec.greeting = "This is my second demo";
+
+    })
+  
+</script>
+
+</head>
+<body>
+
+    <form action="math.php" method="post">
+ 
+ <span id="editable-math" class="mathquill-editable">y=</span>
+ <span id="editable-math" class="mathquill-editor" ng-model="mathditor"></span>
+
+<input id="latex-source" name="chkd" ng-model="demo" placeholder="Your sum here!" />
+
+<input type="submit" id="save" name="save" value="Submit" />
+{{demo}}
+</form>
+<script type="text/javascript" src="angular.min.js"></script>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+ <script type="text/javascript" src="mathquill.js"></script>
+<script type="text/javascript">
+    var LatexImages = false;
+    $(function(){
+        function printTree(html)
+        {
+            html = html.match(/<[a-z]+|<\/[a-z]+>|./ig);
+            if(!html) return '';
+            var indent = '\n', tree = '';
+            while(html.length)
+            {
+                var token = html.shift();
+                if(token.charAt(0) === '<')
+                {
+                    if(token.charAt(1) === '/')
+                    {
+                        indent = indent.slice(0,-2);
+                        if(html[0] && html[0].slice(0,2) === '                           token += indent.slice(0,-2);
+                    }
+                    else
+                    {
+                        tree += indent;
+                        indent += '  ';
+                    }
+                    token = token.toLowerCase();
+                }
+
+                tree += token;
+            }
+            return tree.slice(1);
+        }
+        var editingSource = false, latexSource = $('#latex-source'), htmlSource = $('#html-source'), codecogs = $('#codecogs'), latexMath = $('#editable-math').bind('keydown keypress', function()
+        {
+            setTimeout(function() {
+                htmlSource.text(printTree(latexMath.mathquill('html')));
+                var latex = latexMath.mathquill('latex');
+                if(!editingSource)
+                    latexSource.val(latex);
+                if(!LatexImages)
+                    return;
+                latex = encodeURIComponent(latexSource.val());
+//            location.hash = '#'+latex; //extremely performance-crippling in Chrome for some reason
+                codecogs.attr('src','http://latex.codecogs.com/gif.latex?'+latex).parent().attr('href','http://latex.codecogs.com/gif.latex?'+latex);
+            });
+        }).keydown().focus();
+        if(location.hash && location.hash.length > 1)
+            latexMath.mathquill('latex', decodeURIComponent(location.hash.slice(1))).focus();
+        var textarea = latexSource.focus(function(){
+            editingSource = true;
+        }).blur(function(){
+            editingSource = false;
+        }).bind('keydown keypress', function()
+        {
+            var oldtext = textarea.val();
+            setTimeout(function()
+            {
+                var newtext = textarea.val();
+                if(newtext !== oldtext)
+                    latexMath.mathquill('latex', newtext);
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
+
+
+
+// if(isset($_POST['save'])){
+
+    
+//     $temp = $_POST['chkd'];
+
+//     echo $temp;
+
+// }

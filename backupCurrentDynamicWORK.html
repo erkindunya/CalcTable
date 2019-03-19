@@ -103,7 +103,7 @@
 </div>
 
 <div>
-    <label class="description" for="GrandTotal">Total</label>
+    <label class="outputText" for="GrandTotal">Total</label>
     <input id="GrandTotal" name="GrandTotal" class="element text medium" type="text" maxlength="255"  readonly="true" />
 </div>
 
@@ -2632,8 +2632,7 @@ function myCalculate(){
         // Ensure projectValue and businessUnit have been selected.
         if (projectValue === "" || businessUnit === "" || geographicalLocation === "") {
             // swal("Please select the product origin and projectValue.");
-            swal('Oops...', 'Please select the business Unit, geographical Location  and projectValue.',
-                'error');
+            //swal('Oops...', 'Please select the business Unit, geographical Location  and projectValue.','error');
             // alert("Please select the businessUnit and projectValue.");
             return;
         }
@@ -2686,11 +2685,16 @@ function myCalculate(){
             });
           });
           return sum;
+          $("#GrandTotal")=sum ;
         }
     console.log(getDivSum("#sumDiv"))
     $("#GrandTotal").next().html(getDivSum("#sumDiv"))
         $(document).ready(function() {
           console.log(getDivSum("#sumDiv"));
+        //$("#GrandTotal.val();
+        var someValue = $(".outputText").text();
+        console.log("Value is "+someValue);
+
         });
 
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sample</title>
+    <!-- <script type="text/javascript">
+    function get() {
+        var spans = document.querySelectorAll("#s1");// get all the elements with id=s1
+        var len = spans.length;
+        for (var i = 0; i < len; i++) {
+            console.log('span value', spans[i].textContent);// console the textContent
+        }
+    }
+    function set() {
+        var inputs = document.querySelectorAll("#i1");// get all the elements with id=s1
+        var len = inputs.length;
+        for (var i = 0; i < len; i++) {
+            inputs[i].textContent = "hello"; //set the textContent as hello
+            console.log('span value', inputs[i].textContent);// console the textContent
+        }
+    }
+    </script> -->
+
+        <script>
+        $(document).ready(function(){
+        $("#save").mouseover(function(){
+            var mysave = $('#spantxt').html();
+            $("#hiddeninput").val(mysave);
+            });
+        });
+        </script>
+
+
+</head>
+ 
+<body>
+    <!-- <input id="i1"/>
+    <input id="i1"/>
+    <input id="i1"/>
+    <input id="i1"/>
+    <input id="i1"/>
+    <span id="s1">1</span>
+    <span id="s1">2</span>
+    <span id="s1">3</span>
+    <span id="s1">4</span>
+    <span id="s1">5</span>
+    <button type="button" onclick="get()">Get</button>
+    <button type="button" onclick="set()">Set</button> -->
+
+    <form >
+            <span id="spantxt" class="mathquill-editor">sssss</span>
+                               
+          <input type="hidden" id="hiddeninput" name="hiddeninput">
+          <input type="submit" id="save" name="save" value="Submit"/>
+          
+          </form>
+
+            
+</body>
+ 
+</html>

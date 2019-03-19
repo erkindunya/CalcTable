@@ -1,5 +1,5 @@
 <script data-require="jquery@2.1.1" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<div class="ui-widget">
+<!-- <div class="ui-widget">
         <select id="pick">
             <option value="">Select one...</option>
             <option value="1">1</option>
@@ -15,13 +15,37 @@
             <option value="13">13</option>
             <option value="14">14</option>
         </select>
-    </div>
-<script>
+    </div> -->
 
-    $("#drop").change(function () {
+   
+
+
+    <!-- $("#drop").change(function () {
         var end = this.value;
         //var firstDropVal = $('#pick').val();
         console.log(end);
     });
 
+</script> -->
+<div id="myDiv">
+        <span>sss</span>
+        <span>ss</span>
+        <span>ss</span>
+    </div>
+    <button id="myButton">CLICK</button>
+
+<script>
+        $(document).ready(function(){
+            $("#myButtonSet").click(function(){
+                $("myDiv span:nth-child(0)).text("Span, 1, text");
+                $("myDiv span:nth-child(1)).text("Span, 2, text");
+                $("myDiv span:nth-child(2)).text("Span, 3, text");
+            });
+       
+            $("#myButtonGet").click(function(){
+            alert("Span 1 Text " + $("myDiv span:nth-child(0)).text());
+            alert("Span 2 Text " + $("myDiv span:nth-child(1)).text());
+            alert("Span 3 Text " + $("myDiv span:nth-child(2)).text());
+            });
+            });
 </script>
