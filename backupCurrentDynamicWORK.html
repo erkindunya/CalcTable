@@ -103,8 +103,8 @@
 </div>
 
 <div>
-    <label class="description" for="Total">Total</label>
-    <input id="Total" name="Total" class="element text medium" type="text" maxlength="255"  readonly="true" />
+    <label class="description" for="GrandTotal">Total</label>
+    <input id="GrandTotal" name="GrandTotal" class="element text medium" type="text" maxlength="255"  readonly="true" />
 </div>
 
 </div>
@@ -2677,12 +2677,25 @@ function myCalculate(){
     // var results += result;
     // $("#Total")= results;
 
-    
+        // to calculate Grand total
+        function getDivSum(selector) {
+          var sum = 0;
+          $(selector).each(function() {
+            $(this).find("span").each(function() {
+              sum += parseInt($(this).html());
+            });
+          });
+          return sum;
+        }
+    console.log(getDivSum("#sumDiv"))
+    $("#GrandTotal").next().html(getDivSum("#sumDiv"))
+        $(document).ready(function() {
+          console.log(getDivSum("#sumDiv"));
+        });
 
 
-    
   }); 
-  
+
 }
 
 myLoad();
