@@ -1,0 +1,61 @@
+div class="flabel">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<label for="adult-items-trousers">Trousers - £3.00</label>
+<input type="number" name="adult-items-trousers" min="0" max="500" value="0">
+</div>
+<div class="flabel">
+<label for="adult-items-tshirts">T-shirts - £1.20</label>
+<input type="number" name="adult-items-tshirts" min="0" max="500" value="0">
+</div>
+<div class="flabel">
+<label for="adult-items-skirts">Skirts - £3.00</label>
+<input type="number" name="adult-items-skirts" min="0" max="500" value="0">
+    
+    
+    <script>
+    $(document).ready(function() {
+    var $result = $('#result')
+    var $qtyInput = $('.qty_input')
+    var $items = $('#items')
+    $('input[type="submit"]').attr('disabled','disabled');
+    
+    var updatePrices = function () {
+      var sum = 0
+      var vitems = 0
+    
+      $qtyInput.each(function () {
+        var value = parseFloat(this.value) || 0
+        var price = parseFloat(this.dataset.price) || 0
+        sum += value * price
+        vitems = value + vitems
+      })
+    
+      $result.html(sum.toFixed(2))
+      $items.html(vitems.toFixed(0))
+      if (sum >= 10.00) {
+        $(".price-colour").css("color", "green");
+        $(".minimum-order span").css("display", "none");
+        $(".price-wrapper").css("padding-top", "20px");
+            $('input[type="submit"]').removeAttr('disabled');	
+        } else {
+        $(".price-colour").css("color", "#CC0000");
+        $(".minimum-order span").css("display", "inline");
+        $(".price-wrapper").css("padding-top", "0px");
+            $('input[type="submit"]').attr('disabled','disabled');		
+        }
+    }
+    
+    $(".price-wrapper").hide(); //hide your div initially
+        var topOfOthDiv = $(".navbar-header").offset().top;
+        $(window).scroll(function() {
+            if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
+                $(".price-wrapper").show(); //reached the desired point -- show div
+            } else {
+             $(".price-wrapper").hide();	
+            }
+    });
+    
+    $qtyInput.change(updatePrices)
+    updatePrices()
+    });
+    </script>

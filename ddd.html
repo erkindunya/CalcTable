@@ -1,0 +1,50 @@
+<!-- <input id="myInput" type="text" value="Swag" />
+
+<script>
+    var test = "test";
+    document.getElementById("myInput").value = test;
+</script> -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<div class="prices">
+
+<div id="sumDiv">
+    <div id="ESPvalue1BidForecastDiv" class="col-sm-12">
+        <label>Full time employment opportunity created</label>
+        <input type="number" placeholder="Full time employment opportunity created" id="ESPvalue1BidForecast"
+            class="popup_ctrl" my_value="27165" value="11.11" readonly="true">
+        <!-- <span name="result"> </span>   -->
+    </div>
+    <div id="ESPvalue1BidForecastDiv" class="col-sm-12">
+        <label>Full time employment opportunity created</label>
+        <input type="number" placeholder="Full time employment opportunity created" id="ESPvalue1BidForecast"
+            class="popup_ctrl" my_value="27165" value="10" readonly="true">
+        <!-- <span name="result"> </span>   -->
+    </div>
+    <div id="ESPvalue1BidForecastDiv" class="col-sm-12">
+        <label>Full time employment opportunity created</label>
+        <input type="number" placeholder="Full time employment opportunity created" id="ESPvalue1BidForecast"
+            class="popup_ctrl" my_value="27165" value="20" readonly="true">
+        <!-- <span name="result"> </span>   -->
+    </div>
+    <h3>Subtotal = $<span id="subtotal">0.00</span></h3>
+</div>
+<!-- 
+  <h3>Option 1 = $<span class="sum" id="option-1">11.11</span></h3>
+  <h3>Option 2 = $<span class="sum" id="option-2">22.22</span></h3>
+  <h3>Option 3 = $<span class="sum" id="option-3">33.33</span></h3> -->
+
+</div>
+
+
+
+<script> 
+
+var sum = 0;
+$('.sum').each(function() {
+  sum += +$(this).text()||0;
+});
+$("#subtotal").text(sum);
+
+</script>

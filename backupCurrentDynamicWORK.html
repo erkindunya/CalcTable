@@ -63,43 +63,63 @@
 <div id="sumDiv">  
 <div>
     <label class="description" for="ESPValue1">full time employment opportunity created</label>
-    <input id="ESPValue1" name="ESPValue1" class="element text medium" type="number" maxlength="255" value="27165" readonly="true"/>
+    <input id="ESPValue1" name="ESPValue1" class="element text medium" type="number" maxlength="255" my_value="" value="27165" readonly="true"/>
+    <!-- <input id="ESPValue1" name="ESPValue1" class="element text medium" type="number" maxlength="255" my_value="" readonly="true"/> -->
+    <!-- value="27165"  -->
 </div>
 <div>
     <label class="description" for="ESPValue2">part time employment opportunity created</label>
-    <input id="ESPValue2" name="ESPValue2" class="element text medium" type="number" maxlength="255" value="3241"  readonly="true"/>
+    <input id="ESPValue2" name="ESPValue2" class="element text medium" type="number" maxlength="255" my_value=""  value="3241"  readonly="true"/>
+    <!-- <input id="ESPValue2" name="ESPValue2" class="element text medium" type="number" maxlength="255" my_value="" readonly="true"/> -->
+    <!-- value="3241"   -->
 </div>
 <div>
     <label class="description" for="ESPValue3">apprenticeship opportunity created</label>
-    <input id="ESPValue3" name="ESPValue3" class="element text medium" type="number" maxlength="255" value="27165" readonly="true"/>
+    <input id="ESPValue3" name="ESPValue3" class="element text medium" type="number" maxlength="255" my_value="" value="27165" readonly="true"/>
+    <!-- <input id="ESPValue3" name="ESPValue3" class="element text medium" type="number" maxlength="255" my_value="" readonly="true"/> -->
+    <!-- value="27165"  -->
 </div>
 <div>
     <label class="description" for="ESPValue4">apprenticeship weeks on site</label>
-    <input id="ESPValue4" name="ESPValue4" class="element text medium" type="number" maxlength="255" value="185.47" readonly="true" />
+    <input id="ESPValue4" name="ESPValue4" class="element text medium" type="number" maxlength="255" my_value="" value="185.47" readonly="true" />
+    <!-- <input id="ESPValue4" name="ESPValue4" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true" /> -->
+    <!-- value="185.47" -->
 </div>
 <div>
     <label class="description" for="ESPValue5">school pupils engaged no of pupils</label>
-    <input id="ESPValue5" name="ESPValue5" class="element text medium" type="number" maxlength="255" value="32" readonly="true" />
+    <input id="ESPValue5" name="ESPValue5" class="element text medium" type="number" maxlength="255" my_value="" value="32" readonly="true" />
+    <!-- <input id="ESPValue5" name="ESPValue5" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true" /> -->
+    <!-- value="32" -->
 </div>
 <div>
     <label class="description" for="ESPValue6">work experience under 19 number of weeks</label>
-    <input id="ESPValue6" name="ESPValue6" class="element text medium" type="number" maxlength="255" value="20.92" readonly="true" />
+    <input id="ESPValue6" name="ESPValue6" class="element text medium" type="number" maxlength="255" my_value="" value="20.92"  readonly="true" />
+    <!-- <input id="ESPValue6" name="ESPValue6" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true" /> -->
+    <!-- value="20.92" -->
 </div>
 <div>
     <label class="description" for="ESPValue7">work experience over 19 number of weeks</label>
-    <input id="ESPValue7" name="ESPValue7" class="element text medium" type="number" maxlength="255" value="320" readonly="true" />
+    <input id="ESPValue7" name="ESPValue7" class="element text medium" type="number" maxlength="255" my_value="" value="320" readonly="true"/>
+    <!-- <input id="ESPValue7" name="ESPValue7" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true"/> -->
+    <!-- value="320" -->
 </div>
 <div>
     <label class="description" for="ESPValue8">proffesional development training number of days</label>
-    <input id="ESPValue8" name="ESPValue8" class="element text medium" type="number" maxlength="255" value="50" readonly="true" />
+    <input id="ESPValue8" name="ESPValue8" class="element text medium" type="number" maxlength="255" my_value="" value="50"  readonly="true" />
+    <!-- <input id="ESPValue8" name="ESPValue8" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true" /> -->
+    <!-- value="50" -->
 </div>
 <div>
     <label class="description" for="ESPValue9">health and safety training number of days</label>
-    <input id="ESPValue9" name="ESPValue9" class="element text medium" type="number" maxlength="255" value="100" readonly="true" />
+    <input id="ESPValue9" name="ESPValue9" class="element text medium" type="number" maxlength="255" my_value="" value="100" readonly="true" />
+    <!-- <input id="ESPValue9" name="ESPValue9" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true" /> -->
+    <!-- value="100" -->
 </div>
 <div>
     <label class="description" for="ESPValue10">kier ambassadors trained</label>
-    <input id="ESPValue10" name="ESPValue10" class="element text medium" type="number" maxlength="255" value="50" readonly="true" />
+    <input id="ESPValue10" name="ESPValue10" class="element text medium" type="number" maxlength="255" my_value="" value="50" readonly="true" />
+    <!-- <input id="ESPValue10" name="ESPValue10" class="element text medium" type="number" maxlength="255" my_value=""  readonly="true" /> -->
+    <!-- value="50" -->
 </div>
 
 <div>
@@ -2625,10 +2645,9 @@
 // }
 
 function myCalculate(){
-  var projectValue = $("#projectValue").val();
-  var businessUnit = $("#BusinessUnit").val();
-  var geographicalLocation = $("#GeoLocation").val();
-  
+        var projectValue = $("#projectValue").val();
+        var businessUnit = $("#BusinessUnit").val();
+        var geographicalLocation = $("#GeoLocation").val();
         // Ensure projectValue and businessUnit have been selected.
         if (projectValue === "" || businessUnit === "" || geographicalLocation === "") {
             // swal("Please select the product origin and projectValue.");
@@ -2660,9 +2679,9 @@ function myCalculate(){
     // Amount to multiply.
     var multiplier = $(`table#${tableToUse} tbody > tr[product='${currentProductId}'] > td[projectValue='${projectValue}']`).text();
     
+    // $(this).val($(this).attr('my_value')*multiplier);
     // A <span> element, to be populated with the calculated product volume.
 	var result = $("<span name='result'>");
-
 	// Calculate the figure and update the result element.
     result.text($(this).val() * multiplier); 
 
@@ -2671,8 +2690,23 @@ function myCalculate(){
 
 	// Insert result after the current input field.
     $(this).after(result);
-    // var results += result;
-    // $("#Total")= results;
+   // var results += result;
+   // $("#Total")= results;
+
+
+    // function getInputs(selector) {
+    //   var inputs = 0;
+    //   $(selector).each(function() {
+    //     $(this).find("input").each(function() {
+    //       sum += parseInt($(this).html());
+    //       $('#').val(parseInt($(this).html()));
+    //       var multiplier = $(`table#${tableToUse} tbody > tr[product='${currentProductId}'] > td[projectValue='${projectValue}']`).text();
+    //       //  $('#GrandTotal').val(sum); // give the final sum from Log
+    //     });
+    //   });
+    //   return sum;
+    // }
+
 
         // to calculate Grand total
         function getDivSum(selector) {
@@ -2681,6 +2715,7 @@ function myCalculate(){
             $(this).find("span").each(function() {
               sum += parseInt($(this).html());
               $('#GrandTotal').val(parseInt($(this).html()));
+              
             });
           });
           return sum;
